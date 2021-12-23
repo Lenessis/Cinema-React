@@ -1,0 +1,9 @@
+.card
+{
+    width: 30%;
+}
+.card-img-top
+{
+    max-height: 60vh;
+    width: 100%;
+}
