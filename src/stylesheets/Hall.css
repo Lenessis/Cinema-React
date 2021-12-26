@@ -1,0 +1,34 @@
+.hall
+{
+    margin: 10px auto;
+    padding: 30px;
+    width: 80%;
+    text-align: center;
+    background-color: rgb(160, 160, 240); /* temporary */
+}
+
+.hall > h2{
+    padding: 20px;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.single-seat
+{
+    margin: 3px;
+    padding: 20px;
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgb(235, 235, 235); /* temporary */
+}

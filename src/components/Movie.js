@@ -16,16 +16,9 @@ const Movie = props =>
                 <h5 className="card-title">{props.title} ({props.productionYear.getFullYear()})</h5>
                 <p> Duration: {props.time} minutes</p>
                 <p className="card-text"> {props.description}</p>
-                <a href="#" className="btn btn-primary">Show movie details</a>
+                <a className="btn btn-primary">Show movie details</a>
             </div>
         </div>
-        /*<div>
-            <h5>{props.title}</h5>
-            <img src={props.img} alt={props.title} />
-            <p>{props.productionYear.getFullYear()}</p>
-            <p>{props.time}</p>
-            <p>{props.description}</p>
-        </div>*/
     );
 }
 
