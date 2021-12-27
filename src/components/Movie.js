@@ -31,15 +31,20 @@ const Movie = props =>
     //napisać funkcje która wyświetli okno, które pokaże detale odnośnie filmu
     return(
         <div className="card" >
-            <img src={props.img} className="card-img-top" alt="{props.title}" />
+            {/* IMAGE BOX */}
+            <div className="card-img-box">
+                <img src={props.img} className="card-img-top" alt="{props.title}" />
+            </div>
+
+            {/* BODY INFORMATION BOX */}
             <div className="card-body">
                 <h5 className="card-title">{props.title} {/*{props.productionYear} */}</h5>
                 {/*<p> Duration: {props.time} minutes</p>*/}
                 <p className="card-text"> {props.description.slice(0,100)+"..."}</p>
-                <button className="btn btn-primary" onClick={e => ShowMovieDetails()} key={props.id}>Show details</button>
+                <button className="btn btn-primary card-button-show-details" onClick={e => ShowMovieDetails()} key={props.id}>Show details</button>
             </div>
 
-            {/* --- Hidden box --- */}
+            {/* --- HIDDEN DETAILS BOX --- */}
             <div className="movie-details" id={props.id}>
                 <div className="movie-details-card">
                     <img src={props.img} className="image-details" alt="{props.title}" />
