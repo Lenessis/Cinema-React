@@ -9,14 +9,15 @@ import '../stylesheets/Movie.css';
 
 const Movie = props =>
 {
+    //napisać funkcje która wyświetli okno, które pokaże detale odnośnie filmu
     return(
         <div className="card" >
             <img src={props.img} className="card-img-top" alt="{props.title}" />
             <div className="card-body">
-                <h5 className="card-title">{props.title} ({props.productionYear.getFullYear()})</h5>
+                <h5 className="card-title">{props.title} {props.productionYear}</h5>
                 <p> Duration: {props.time} minutes</p>
                 <p className="card-text"> {props.description}</p>
-                <a className="btn btn-primary">Show movie details</a>
+                <button className="btn btn-primary">Show movie details</button>
             </div>
         </div>
     );
@@ -35,7 +36,7 @@ Movie.protoTypes =
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string,
-    productionYear: PropTypes.instanceOf(Date),
+    productionYear: PropTypes.number,
     time: PropTypes.number.isRequired,
     description: PropTypes.string
 }

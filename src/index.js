@@ -6,12 +6,14 @@ import './index.css';
 import Movies from './components/Movies';
 import Hall from './components/Hall';
 import Ticket from './components/Ticket';
+import EditMovie from './components/EditMovie';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/*<Movies />
-    <Hall /> */}
-    <Ticket />
+    <Movies />
+    {/*<Hall /> 
+    <Ticket /> */}
+    <EditMovie />
   </React.StrictMode>,
   document.getElementById('root')
 );
