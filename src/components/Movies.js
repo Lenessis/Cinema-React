@@ -18,7 +18,7 @@ var movieList = [
         description: "The films take place in the fictional world of Middle-earth sixty years before the beginning of The Lord of the Rings, and follow hobbit Bilbo Baggins (Martin Freeman), who is convinced by the wizard Gandalf the Grey (Ian McKellen) to accompany thirteen dwarves, led by Thorin Oakenshield (Richard Armitage), on a quest."
     },
     {
-        //id: 2,
+        id: 2,
         title: "Harry Potter",
         img: "https://fwcdn.pl/fpo/05/71/30571/7529392.3.jpg",
         productionYear: 2007,
