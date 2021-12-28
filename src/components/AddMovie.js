@@ -2,8 +2,27 @@ import React from "react";
 //import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 
-const EditMovie = () =>
+const AddMovie = () =>
 {
+/*function SaveMovie  (e) 
+    {
+        e.preventDefault();
+        if(
+            document.getElementById("title-alert").innerHTML === "" &&
+            document.getElementById("duration-alert").innerHTML === "" 
+        )
+        {
+            const title = document.getElementById("title").value;
+            const img = document.getElementById("image").value;
+            const year = document.getElementById("year").value;
+            const duration = document.getElementById("duration").value;
+            const description = document.getElementById("description").value;
+           // save(title,img,year,duration,description);
+           this.props.addMovieHandler(title,img,year,duration,description);
+           this.props.history.push("/");
+        }
+    }*/
+
     function CheckTitle(title)
     {
         if(title === "")
@@ -52,7 +71,7 @@ const EditMovie = () =>
 
     return(
         <div className="form-content"> 
-            <h1>Edit movie</h1>
+            <h1>Add movie</h1>
             <form>
 
                 {/* TITLE AND LINK IMAGE INPUTS */}
@@ -87,9 +106,9 @@ const EditMovie = () =>
                         <textarea id="description" className="form-control" />               
                 </div>
 
-                <button type="submit" className="btn btn-primary">Save</button>
+                <button type="submit" className="btn btn-primary" >Add</button>
             </form>
         </div>
     );
 }
-export default EditMovie;
+export default AddMovie;

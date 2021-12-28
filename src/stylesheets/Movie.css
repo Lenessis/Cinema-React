@@ -15,15 +15,6 @@
     width: 100%;
 }
 
-.card-img-top
-{
-    /*position: absolute;*/
-    /*height: 100%;
-    min-height: 40vh; 
-    width: 100%;*/
-    
-}
-
 .card-body
 {  
     position: absolute;
@@ -110,4 +101,15 @@
 .close-details-button:hover
 {
     transform: scale(1.2);
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-child
+{
+    margin: 10px 15px;
 }

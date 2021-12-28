@@ -11,18 +11,6 @@
  */
 import axios from 'axios';
 
-/*const renderMovies = async () =>
-{
-   let uri = 'http://localhost:3005/movies';
-
-   const res = await fetch(uri); //fetch resources from link 'http://localhost:3000/movies'. It is an object, not a data
-   const movies = await res.json(); //take objects from json and paste it in a javascript objects from json. In other words.. translate json objects to JS objects
-   console.log(movies);
-  }
-
-
-window.addEventListener('DOMContentLoaded', () => renderMovies());*/
-
 export default axios.create({
     baseURL:"http://localhost:3005"
 });

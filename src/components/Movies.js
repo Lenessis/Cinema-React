@@ -11,7 +11,7 @@ const Movies = (props) =>
 {
 
     return (
-        <div className="album">
+        <div className="album">           
             {props.movies.map((movie) =>{
                 return(
                     <Movie 

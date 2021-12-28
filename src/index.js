@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
-/*import Movies from './components/Movies';
-import Hall from './components/Hall';
-import Ticket from './components/Ticket';
-import EditMovie from './components/EditMovie';*/
 import App from './components/App.js';
 
 /* 
@@ -15,7 +11,9 @@ import App from './components/App.js';
  * data are fetched anyway by functions
  */
 
-/*const renderMovies = async () =>
+/*
+fragment kodu, który miał odpowiadać za czytanie z bazy
+const renderMovies = async () =>
 {
    let uri = 'http://localhost:3005/movies';
 
@@ -31,10 +29,6 @@ window.addEventListener('DOMContentLoaded', () => renderMovies());
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    {/*<Movies />
-    <Hall /> 
-    <Ticket /> 
-    <EditMovie /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -53,11 +53,13 @@ class Hall extends Component
 
     render()
     {
-        /* klikniecie na siedzenie wywołuje mechanizm kupowania biletu ?*/
         return(
             <div className="hall">
                 <h2>{this.hallName}</h2>
-                {this.RenderRows(5)}
+                <div className="render-rows">
+                    {this.RenderRows(5)}
+                </div>
+                
             </div>
         );
     }

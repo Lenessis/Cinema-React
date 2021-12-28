@@ -1,10 +1,8 @@
 .hall
 {
-    margin: 10px auto;
-    padding: 30px;
-    width: 80%;
+    margin: auto;
+    padding: 10px;
     text-align: center;
-    background-color: rgb(160, 160, 240); /* temporary */
 }
 
 .hall > h2{
@@ -17,6 +15,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
 
 }
 .single-seat

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import '../stylesheets/Movie.css';
 
@@ -9,14 +10,10 @@ import '../stylesheets/Movie.css';
 
 const Movie = props =>
 {
+
     function ShowMovieDetails()
     {
-        
-        //var x =  document.getElementsByClassName("movie-details")
         var x = document.getElementById(props.id)
-        console.log(x)
-        const y = x.style.visibility;
-        console.log(y)
         x.style.visibility = "visible";
         
     }
@@ -27,38 +24,58 @@ const Movie = props =>
         x.style.visibility = "hidden";
     }
 
-
-    //napisać funkcje która wyświetli okno, które pokaże detale odnośnie filmu
     return(
         <div className="card" >
-            {/* IMAGE BOX */}
+            {/* --- IMAGE BOX --- */}
             <div className="card-img-box">
                 <img src={props.img} className="card-img-top" alt="{props.title}" />
             </div>
 
-            {/* BODY INFORMATION BOX */}
+            {/* ----- BODY INFORMATION BOX ----- */}
             <div className="card-body">
-                <h5 className="card-title">{props.title} {/*{props.productionYear} */}</h5>
-                {/*<p> Duration: {props.time} minutes</p>*/}
+                <h5 className="card-title">{props.title} </h5>
                 <p className="card-text"> {props.description.slice(0,100)+"..."}</p>
                 <button className="btn btn-primary card-button-show-details" onClick={e => ShowMovieDetails()} key={props.id}>Show details</button>
             </div>
 
-            {/* --- HIDDEN DETAILS BOX --- */}
+            {/* ----- HIDDEN DETAILS BOX ----- */}
             <div className="movie-details" id={props.id}>
+
                 <div className="movie-details-card">
+            {/* --- Image block --- */}
                     <img src={props.img} className="image-details" alt="{props.title}" />
+
+            {/* --- Text information block --- */}
                     <div className="box-details">
+
+                        {/* --- Close button --- */}
                         <button className="close-details-button" onClick={e => HideMovieDetails()}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
                                 <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
                             </svg>
                         </button>
+
+                        {/* --- Details informations --- */}
                         <h1>{props.title} ({props.productionYear}) </h1>
                         <p> Duration: {props.time} minutes</p>
                         <p className="card-text"> {props.description}</p>
-                        {/* buttony do edycji i do rezerwacji */}
+
+                        {/* --- Routing buttons --- */}
+                        <div className="buttons">
+                            <Link to="/edit-movie">
+                                <button className="btn btn-primary buttons-child">Edit</button>
+                            </Link>
+
+                            <Link to="#">
+                                <button className="btn btn-primary buttons-child">Delete</button>
+                            </Link>
+                            
+                            <Link to="#">
+                                <button className="btn btn-primary buttons-child">Book the ticket</button>
+                            </Link>                           
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -76,7 +93,7 @@ Movie.protoTypes =
         }
     },*/
 
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string,
     productionYear: PropTypes.number,
