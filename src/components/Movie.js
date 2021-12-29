@@ -71,7 +71,7 @@ const Movie = props =>
                                 <button className="btn btn-primary buttons-child">Delete</button>
                             </Link>
                             
-                            <Link to="#">
+                            <Link to="/showings">
                                 <button className="btn btn-primary buttons-child">Book the ticket</button>
                             </Link>                           
                         </div>

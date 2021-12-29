@@ -5,14 +5,29 @@
     justify-content: center;
     margin: 40px auto;
 }
+
+/* --- table ---*/
 .table
 {
     text-align: center;
     width: 80%;
 }
 
+.thead
+{
+    background-color: rgb(235, 235, 235);
 
+    text-transform: uppercase;
+    border-bottom: solid 2px #CCC;
+}
 
+.tbody >tr>th
+{
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* -- hidden box ---*/
 .buy-details
 {
     margin: 0;

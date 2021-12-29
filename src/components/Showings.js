@@ -25,11 +25,11 @@ const Showings = (props) =>
         var x = document.getElementById(id)
         x.style.visibility = "hidden";
     }
-
+//wyszukiwanie, sortowanie po dacie i godzinie
     return(
         <div className="showings-table">
             <table className="table">
-                <thead>
+                <thead className="thead">
                     <tr>
                     <th scope="col">Movie</th>
                     <th scope="col">Date</th>
@@ -38,7 +38,7 @@ const Showings = (props) =>
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="tbody">
                     {props.showings.map((showing) =>
                     {
                         return(
