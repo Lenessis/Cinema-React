@@ -33,9 +33,7 @@ function Header ()
                     </button> */}
 
                 {/* Jeśli wyświetla się komponent Movie, to wyświetl przycisk add movie */}
-                <Link to="/add-movie">
-                    <button className="btn btn-primary add-movie-btn">Add movie</button>
-                </Link>
+                
                 
             </nav>
         </header>

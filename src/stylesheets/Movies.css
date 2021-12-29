@@ -8,3 +8,13 @@
     flex-wrap: wrap;
 
 }
+
+
+.add-movie-btn
+{
+    padding: 10px 15px;
+    position: fixed;
+    top: 1.5%;
+    left: 90%;
+    z-index: 999;
+}

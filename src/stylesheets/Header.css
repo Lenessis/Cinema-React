@@ -14,12 +14,3 @@ a
 {
     text-decoration: none!important;
 }
-
-.add-movie-btn
-{
-    padding: 10px 15px;
-    position: absolute;
-    top: 20%;
-    left: 90%;
-    z-index: 999;
-}

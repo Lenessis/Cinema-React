@@ -1,5 +1,6 @@
 import React from "react";
 import Movie from "./Movie";
+import { Link } from "react-router-dom";
 import '../stylesheets/Movies.css';
 
 /* 
@@ -11,7 +12,11 @@ const Movies = (props) =>
 {
 
     return (
-        <div className="album">           
+        <div>
+            <Link to="/add-movie">
+                <button className="btn btn-primary add-movie-btn">Add movie</button>
+            </Link>
+            <div className="album">           
             {props.movies.map((movie) =>{
                 return(
                     <Movie 
@@ -24,8 +29,12 @@ const Movies = (props) =>
                     description = {movie.description}
                     />
                 );
-            })}           
+            })}  
+                     
+            </div>
+            
         </div>
+        
     );
 }
 
