@@ -103,7 +103,7 @@ const Ticket = (props) =>
 
     return(
         <div className="form-content"> 
-            <h1>Bilety</h1>
+            <h1>Ticket</h1>
             {/* Zrobić, żeby wyświetlało tu się miejsce i nazwa filmu!!! */}
             <p>Buy a ticket for <b>{props.title}</b> </p>
             <form>

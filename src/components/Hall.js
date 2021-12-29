@@ -52,7 +52,7 @@ const Hall = props =>
 
         return(
             <div className="hall">
-                <h2>Sala {props.id}</h2>
+                <h2>Hall {props.id}</h2>
                 <div className="render-rows">
                     
                     {RenderRows(props.rowsAmount, props.seatsAmount)}
