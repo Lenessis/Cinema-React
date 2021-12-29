@@ -3,20 +3,22 @@ data; godzina; film; sala
  29.10.22; 16:00; harry potter; sala 1
  */
 
-import react from "react";
+import react, { useState } from "react";
 
 import Hall from './Hall';
 import Ticket from './Ticket';
 
 import '../stylesheets/Showings.css';
 
-const Showings = () =>
+const Showings = (props) =>
 {
+    let [idHall] = useState();
 
-    function ShowBuyDetails()
+    function ShowBuyDetails(id)
     {
         var x = document.getElementById("test-box")
         x.style.visibility = "visible";
+        idHall = id;
         
     }
 
@@ -24,43 +26,50 @@ const Showings = () =>
     {
         var x = document.getElementById("test-box")
         x.style.visibility = "hidden";
+        idHall = null;
     }
 
     //test code
     return(
-        <div>
+        <div className="showings-table">
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Movie</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Hour</th>
+                    <th scope="col"></th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>
-                        <button className="btn btn-primary" onClick={e =>ShowBuyDetails()}>
-                            Buy ticket
-                        </button>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                    {props.showings.map((showing) =>
+                    {
+                        return(
+                            <tr>
+                                {props.movies.map((movie) =>
+                                {
+                                    if(showing.idMovie === movie.id)
+                                    {
+                                        return(
+                                            <th scope="row">{movie.title}</th>
+                                        );
+                                    }
+                                })}
+
+                            <td>{showing.sDate}</td>
+                            <td>{showing.sHour}</td>
+                            <td>
+                                <button className="btn btn-primary" onClick={e =>ShowBuyDetails(showing.idHall)}>
+                                    Buy ticket
+                                </button>
+                            </td>
+                        </tr> 
+                            );
+                    }
+                    
+                    )}
+                    
                 </tbody>
             </table>
 
@@ -77,7 +86,7 @@ const Showings = () =>
                     </button>
                     
                     <div className="hall">
-                        <Hall />
+                        <Hall id = {idHall}/>
                     </div>
 
                     <div className="order-ticket">

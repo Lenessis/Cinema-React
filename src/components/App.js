@@ -23,6 +23,7 @@ function App ()
 {
     /* Use State */
     const [ movies, setMovies] = useState([]);
+    const [ showings, setShowings] = useState([]);
 
     /* --- READ MOVIES FROM DB ---
      * ---------------------------
@@ -65,6 +66,31 @@ function App ()
         setMovies([...movies, response.data]);
     }
 
+    /* --- READ SHOWINGS FROM DB ---
+     * ---------------------------
+    */
+    const retriveShowings = async () =>
+    {
+        const response = await MoviesApi.get("/showings");
+        return response.data;
+    }
+
+    useEffect( () =>
+    {
+        /* catch data and put it to the State */
+        const getAllShowings = async () =>
+        {
+            const allShowings = await retriveShowings();
+            if (allShowings) setShowings(allShowings);
+        };
+        getAllShowings();
+
+    }, []);
+
+
+
+
+
     return(
         <div>
             <Router>
@@ -90,7 +116,7 @@ function App ()
                     />
                     <Route
                         path="/showings"
-                        element = {<Showing />}
+                        element = {<Showing showings = {showings} movies = {movies}/>}
                     />
                 </Routes>
                     

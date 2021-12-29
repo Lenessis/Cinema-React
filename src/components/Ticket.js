@@ -109,20 +109,19 @@ const Ticket = () =>
             <form>
 
                 {/* DATE AND TIME INPUTS */}
-                <div className="form-row col-md-4">
-                    <div className="form-group col-md-4">
-                        <label for="movieDate">Date</label>
-                        <input type="date" className="form-control" id="movieDate" onChange={e => CheckDate(e.target.value)}/>
-                        <div className="alert" id="date-alert"></div>
-                    </div>
+               {/* <div className="form-row col-md-4">
+                        <div className="form-group col-md-4">
+                            <label for="movieDate">Date</label>
+                            <input type="date" className="form-control" id="movieDate" onChange={e => CheckDate(e.target.value)}/>
+                            <div className="alert" id="date-alert"></div>
+                        </div>
 
-                    <div className="form-group col-md-4">
-                        <label for="movieTime">Time</label>
-                        <input type="time" className="form-control" id="movieTime" step="3600" onChange={e => CheckTime(e.target.value)}/>
-                        <div className="alert" id="time-alert"></div>
-                    </div>
-
-                </div>
+                        <div className="form-group col-md-4">
+                            <label for="movieTime">Time</label>
+                            <input type="time" className="form-control" id="movieTime" step="3600" onChange={e => CheckTime(e.target.value)}/>
+                            <div className="alert" id="time-alert"></div>
+                        </div>
+                    </div> */}
 
                 {/* FIRST AND LASTNAME INPUTS */}
                 <div className="form-row col-md-4">

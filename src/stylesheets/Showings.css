@@ -1,3 +1,18 @@
+.showings-table
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+}
+.table
+{
+    text-align: center;
+    width: 80%;
+}
+
+
+
 .buy-details
 {
     margin: 0;
@@ -58,12 +73,17 @@
 
 .hall
 {
-    width: 60%;
+    width: 50%;
     
 }
 .order-ticket
 {
-    width: 40%;
+    width: 50%;
+}
+
+form
+{
+    width: 100%;
 }
 
 @media (max-width: 1000px) 

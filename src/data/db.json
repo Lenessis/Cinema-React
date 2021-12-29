@@ -38,5 +38,140 @@
             "productionYear": 1989,
             "time": 90
         }
+    ],
+
+
+
+    "halls":[
+        {
+            "id":1, 
+            "rowsAmount": 5,
+            "seatsAmount": 10
+        },
+        {
+            "id":2, 
+            "rowsAmount": 8,
+            "seatsAmount": 7
+        },
+        {
+            "id":3, 
+            "rowsAmount": 6,
+            "seatsAmount": 12
+        },
+        {
+            "id":4, 
+            "rowsAmount": 7,
+            "seatsAmount": 11
+        },
+        {
+            "id":5, 
+            "rowsAmount": 6,
+            "seatsAmount": 10
+        }
+    ],
+
+
+
+    "showings":[
+        {
+            "id":0,
+            "idMovie": 0,
+            "idHall": 1,
+            "sDate": "2022-01-01",
+            "sHour": "16:00"
+        },
+        {
+            "id":1,
+            "idMovie": 1,
+            "idHall": 3,
+            "sDate": "2022-01-10",
+            "sHour": "18:00"
+        },
+        {
+            "id":2,
+            "idMovie": 0,
+            "idHall": 4,
+            "sDate": "2022-01-01",
+            "sHour": "18:00"
+        },
+        {
+            "id":3,
+            "idMovie": 2,
+            "idHall": 2,
+            "sDate": "2022-01-05",
+            "sHour": "12:00"
+        },
+        {
+            "id":4,
+            "idMovie": 3,
+            "idHall": 5,
+            "sDate": "2022-01-03",
+            "sHour": "11:00"
+        },
+        {
+            "id":5,
+            "idMovie": 0,
+            "idHall": 2,
+            "sDate": "2022-01-01",
+            "sHour": "12:00"
+        },
+        {
+            "id":6,
+            "idMovie": 3,
+            "idHall": 1,
+            "sDate": "2022-01-02",
+            "sHour": "11:00"
+        },
+        {
+            "id":7,
+            "idMovie": 1,
+            "idHall": 3,
+            "sDate": "2022-01-02",
+            "sHour": "12:00"
+        },
+        {
+            "id":8,
+            "idMovie": 0,
+            "idHall": 5,
+            "sDate": "2022-01-02",
+            "sHour": "18:00"
+        },
+        {
+            "id":9,
+            "idMovie": 2,
+            "idHall": 2,
+            "sDate": "2022-01-03",
+            "sHour": "15:00"
+        },
+        {
+            "id":10,
+            "idMovie": 2,
+            "idHall": 3,
+            "sDate": "2022-01-03",
+            "sHour": "17:00"
+        }
+    ],
+
+
+
+    "tickets":[
+        {
+            "id":0,
+            "idShowing":0,
+            "firstname": "Robert",
+            "lastname": "Sokołowski",
+            "email": "rs@onet.pl",
+            "price": 20
+        },
+        {
+            "id":1,
+            "idShowing":0,
+            "firstname": "Karolina",
+            "lastname": "Sokołowska",
+            "email": "ks@op.pl",
+            "price": 16
+        }
+
     ]
+
 }
