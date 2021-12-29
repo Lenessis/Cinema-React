@@ -24,6 +24,7 @@ function App ()
     /* Use State */
     const [ movies, setMovies] = useState([]);
     const [ showings, setShowings] = useState([]);
+    const [ halls, setHalls] = useState([]);
 
     /* --- READ MOVIES FROM DB ---
      * ---------------------------
@@ -89,6 +90,25 @@ function App ()
 
 
 
+    const retriveHalls = async () =>
+    {
+        const response = await MoviesApi.get("/halls");
+        return response.data;
+    }
+
+    useEffect( () =>
+    {
+        /* catch data and put it to the State */
+        const getAllHalls = async () =>
+        {
+            const allHalls = await retriveHalls();
+            if (allHalls) setHalls(allHalls);
+        };
+        getAllHalls();
+
+    }, []);
+
+
 
 
     return(
@@ -116,7 +136,7 @@ function App ()
                     />
                     <Route
                         path="/showings"
-                        element = {<Showing showings = {showings} movies = {movies}/>}
+                        element = {<Showing showings = {showings} movies = {movies} halls = {halls}/>}
                     />
                 </Routes>
                     

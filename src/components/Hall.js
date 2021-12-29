@@ -8,17 +8,16 @@ import '../stylesheets/Hall.css';
 
 // Renderowanie miejsc po wierszu i ilości miejsc w wierszu
 //jedno miejsce ma id, należy do jakiejś sali i ma status Zarezerwowane lub nie
-class Hall extends Component
+const Hall = props =>
 {
-    /* Przekazywanie do hall sali z bazy danych z okreslonymi siedzeniami */
-    hallName = " Sala C 204";
-    NextChar(x)
+    
+    function NextChar(x)
     {
         return String.fromCharCode(x.charCodeAt(0) + 1);
         /* Solution: https://stackoverflow.com/questions/12504042/what-is-a-method-that-can-be-used-to-increment-letters */
     }
 
-     RenderSingleRow = (rowName, amountOfSeats) =>
+     function RenderSingleRow(rowName, amountOfSeats)
     {
         const seats = [];
 
@@ -34,7 +33,7 @@ class Hall extends Component
         return seats;
     }
 
-    RenderRows = (amountOfRows) =>
+    function RenderRows(amountOfRows, amountOfSeats)
     {
         /* przekazywanie do renderRows tablicy z iloscia miejsc 
         w danym rzedzie,
@@ -44,25 +43,25 @@ class Hall extends Component
         for(let i = 'A', j = 1; j <= amountOfRows; j++)
         {
             rows.push(
-                <div className="row">{this.RenderSingleRow(i, 10)}</div>
+                <div className="row">{RenderSingleRow(i, amountOfSeats)}</div>
             );
-            i = this.NextChar(i);
+            i = NextChar(i);
         }
         return rows;
     }
 
-    render()
-    {
         return(
             <div className="hall">
-                <h2>{this.hallName}</h2>
+                <h2>Sala {props.id}</h2>
                 <div className="render-rows">
-                    {this.RenderRows(5)}
+                    
+                    {RenderRows(props.rowsAmount, props.seatsAmount)}
+                    
                 </div>
                 
             </div>
         );
-    }
+    
 
 }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 
 
-const Ticket = () =>
+const Ticket = (props) =>
 {
 
     //dodać funkcję, która zatrzyma w razie czego submit
@@ -105,26 +105,26 @@ const Ticket = () =>
         <div className="form-content"> 
             <h1>Bilety</h1>
             {/* Zrobić, żeby wyświetlało tu się miejsce i nazwa filmu!!! */}
-            <p>Buy a ticket for <i>film name</i> seat: <i>number; hall</i></p>
+            <p>Buy a ticket for <b>{props.title}</b> </p>
             <form>
 
                 {/* DATE AND TIME INPUTS */}
-               {/* <div className="form-row col-md-4">
-                        <div className="form-group col-md-4">
+                <div className="form-row col-md-6">
+                        <div className="form-group col-md-6">
                             <label for="movieDate">Date</label>
-                            <input type="date" className="form-control" id="movieDate" onChange={e => CheckDate(e.target.value)}/>
+                            <input type="date" className="form-control" id="movieDate" onChange={e => CheckDate(e.target.value)} value={props.date} disabled/>
                             <div className="alert" id="date-alert"></div>
                         </div>
 
                         <div className="form-group col-md-4">
                             <label for="movieTime">Time</label>
-                            <input type="time" className="form-control" id="movieTime" step="3600" onChange={e => CheckTime(e.target.value)}/>
+                            <input type="time" className="form-control" id="movieTime" step="3600" onChange={e => CheckTime(e.target.value)} value={props.time} disabled/>
                             <div className="alert" id="time-alert"></div>
                         </div>
-                    </div> */}
+                    </div> 
 
                 {/* FIRST AND LASTNAME INPUTS */}
-                <div className="form-row col-md-4">
+                <div className="form-row col-md-6">
                     <div className="form-group col-md-5">
                         <label for="firstname">Firstname</label>
                         <input type="text" className="form-control" id="firstname" placeholder="Firstname..." onChange={e => CheckName(e.target.value, "first")}/>
@@ -138,14 +138,14 @@ const Ticket = () =>
                 </div>
                 
                 {/* EMAILS INPUT */}
-                <div className="form-group col-md-4">
+                <div className="form-group col-md-6">
                     <label for="email">Email</label>
                     <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email..." onChange={e => CheckEmail(e.target.value)}/>
                     <div className="alert" id="email-alert"></div>
                 </div>
                 
                 {/* DISCOUNT SELECT */}
-                <div className="form-group col-md-4">
+                <div className="form-group col-md-6">
                     <label for="Discount">Discount</label>
                         <select id="discount" className="form-control">
                             <option value="20" selected>Normal - 20 PLN</option>
