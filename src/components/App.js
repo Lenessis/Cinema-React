@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { uuid } from "uuidv4";
 
+import {fetchMoviesFromApi} from '../actions'
+import { useSelector, useDispatch } from 'react-redux'
+
 import MoviesApi from '../api/MoviesApi';
 
 import Movies from './Movies';
 import Header from './Header';
 import EditMovie from './EditMovie';
 import AddMovie from './AddMovie';
-
 import Showing from "./Showings";
 
 /*
@@ -21,6 +23,23 @@ import Showing from "./Showings";
 
 function App ()
 {
+    /* new one */
+    const movies1 = useSelector(state => state.movies)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        const fetchData = async () => {
+          try{
+            dispatch(fetchMoviesFromApi())
+          } catch(err){
+            console.log(err)
+          }
+        };
+        fetchData()
+      }, [])
+
+        console.log('Arek: ')
+        console.log()
+
     /* Use State */
     const [ movies, setMovies] = useState([]);
     const [ showings, setShowings] = useState([]);

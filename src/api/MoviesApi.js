@@ -11,6 +11,55 @@
  */
 import axios from 'axios';
 
+/* --- PREVIOUS !!!
 export default axios.create({
     baseURL:"http://localhost:3005"
 });
+*/
+
+ axios = require('axios');
+
+ let url = 'http://localhost:3005/movies';
+
+export const getAllMovies = async () => {
+  return await axios.get(url)
+  .then((response) => {return response.data})
+  .catch((error) => console.log(error))
+}
+
+export const getMovieByID = async (id) => {
+    return await axios.get(url+id)
+    .then((response) => {return response.data})
+    .catch((error) => console.log(error))
+  }
+  
+  export const updateMovie = async (id, title, img, year, time, descriprion) => {
+    return await axios.put(`{http://localhost:3005/movies/}${id}`, {
+      title: title,
+      img: img,
+      productionYear: year,
+      time: time,
+      description: descriprion
+    })
+    .then((response) => {return response.data})
+    .catch((error) => console.log(error))
+  }
+  
+  export const deleteMovie = async (id) => {
+    return await axios.delete(`http://localhost:3005/movies/${id}`)
+    .then((response) => {return response.data})
+    .catch((error) => console.log(error))
+  }
+  
+  export const addMovie = async (title, img, year, time, descriprion) => {
+    return await axios.post("http://localhost:3005/movies",
+    {
+        title: title,
+        img: img,
+        productionYear: year,
+        time: time,
+        description: descriprion
+    })
+    .then((response) => {return response.data})
+    .catch((error) => console.log(error))
+  }

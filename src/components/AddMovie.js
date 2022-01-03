@@ -23,6 +23,28 @@ const AddMovie = () =>
         }
     }*/
 
+    function createList() {
+        fetch("http://localhost:3005/movies", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(this.state.singledata)
+        }).then(
+          this.setState({
+            singledata: {
+              title: "",
+              img: "",
+              productionYear: "",
+              time: "",
+              description: ""
+            }
+          })
+        );
+      }
+
+
+
     function CheckTitle(title)
     {
         if(title === "")
