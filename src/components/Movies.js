@@ -2,6 +2,7 @@ import React from "react";
 import Movie from "./Movie";
 import { Link } from "react-router-dom";
 import '../stylesheets/Movies.css';
+import { useDispatch } from 'react-redux'
 
 /* 
     * This component describes lists of all avaible moviesin cinema. 

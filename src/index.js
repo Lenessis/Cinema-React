@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
 import './index.css';
 
 import App from './components/App.js';
 
+
 /* 
  * First Run  db.json file with 'json-server --port 3005 --watch .\src\data\db.json' 
  * Then Run in another terminal React server with 'npm start' on localhost/3001
  * data are fetched anyway by functions
+ * 
+ * npm install redux-thunk
  */
 
 /*
@@ -27,8 +32,8 @@ window.addEventListener('DOMContentLoaded', () => renderMovies());
 */
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );

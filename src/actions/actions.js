@@ -1,5 +1,5 @@
 //import { getAllMovies, updateMovie,addMovie, deleteMovie} from "../api/MoviesApi";
-import { getAllMovies} from "../api/MoviesApi";
+import { getAllMovies}  from "../api/MoviesApi";
 
 export const fetchMoviesFromApi = () => (dispatch) => {
     return getAllMovies().then(data => {
