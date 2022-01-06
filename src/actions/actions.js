@@ -1,5 +1,5 @@
-//import { getAllMovies, updateMovie,addMovie, deleteMovie} from "../api/MoviesApi";
-import { getAllMovies}  from "../api/MoviesApi";
+import { getAllMovies, updateMovie,addMovie, deleteMovie, getMovieByID} from "../api/MoviesApi";
+//import { getAllMovies}  from "../api/MoviesApi";
 
 export const fetchMoviesFromApi = () => (dispatch) => {
     return getAllMovies().then(data => {
@@ -13,9 +13,23 @@ export const fetchMoviesFromApi = () => (dispatch) => {
     type: 'FETCH_MOVIE_SUCCESS',
     movies,
   });
- /* 
-  export const updateMovieAction = (id,newTitle,newRuntime,img) => (dispatch) => {
-    return updateMovie(id, newTitle, newRuntime, img).then(data => {
+ 
+export const fetchMovieByIdAction =(id) => (dispatch) =>
+{
+  return getMovieByID(id).then( data => {
+    dispatch(movieFetched(data));
+  }).catch(error => {
+    throw(error);
+  });
+}
+
+export const movieFetched = (movie) => ({
+  type: 'FETCH_MOVIE_BY_ID_SUCCESS',
+  movie,
+});
+
+  export const updateMovieAction = (id, newTitle, newImg, newYear, newTime, newDescription) => (dispatch) => {
+    return updateMovie(id, newTitle, newImg, newYear, newTime, newDescription).then(data => {
       dispatch(movieUpdated(data));
     }).catch(error => {
       throw(error);
@@ -38,15 +52,16 @@ export const fetchMoviesFromApi = () => (dispatch) => {
     movieId
   })
   
-  export const createMovieAction = (newTitle,newRuntime,img) => (dispatch) => {
-    return addMovie(newTitle, newRuntime, img).then(data => {
+  export const createMovieAction = (newTitle, newImg, newYear, newTime, newDescription) => (dispatch) => {
+    return addMovie(newTitle, newImg, newYear, newTime, newDescription).then(data => {
       dispatch(movieCreated(data));
     }).catch(error => {
       throw(error);
     });
   }
+
   
   export const movieCreated = (newMovie) => ({
     type: 'CREATE_MOVIE',
     newMovie
-  })*/
+  })
