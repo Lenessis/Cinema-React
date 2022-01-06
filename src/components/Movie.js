@@ -10,6 +10,8 @@ import '../stylesheets/Movie.css';
 
 const Movie = props =>
 {
+    
+
 
     function ShowMovieDetails()
     {
@@ -61,15 +63,15 @@ const Movie = props =>
                         <p> Duration: {props.time} minutes</p>
                         <p className="card-text"> {props.description}</p>
 
-                        {/* --- Routing buttons --- */}
+                        {/* --- Routing buttons --- */} 
                         <div className="buttons">
-                            <Link to="/edit-movie">
+                            <Link to={"/edit-movie/"+props.id}>
                                 <button className="btn btn-primary buttons-child">Edit</button>
                             </Link>
 
-                            <Link to="#">
-                                <button className="btn btn-primary buttons-child">Delete</button>
-                            </Link>
+                            
+                            <button className="btn btn-primary buttons-child" onClick={e => {e.preventDefault(); props.deleteMovie(props.id)}}>Delete</button>
+                            
                             
                             <Link to="/showings">
                                 <button className="btn btn-primary buttons-child">Book the ticket</button>

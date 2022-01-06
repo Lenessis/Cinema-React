@@ -1,177 +1,190 @@
 {
-    "movies":[
-        {
-            "id":0,
-            "title": "The Hobbit: An Unexpected Journey",
-            "img": "https://m.media-amazon.com/images/I/71E9rZRPOLL._AC_SL1333_.jpg",
-            "productionYear": 2012,
-            "time": 169,
-            "description": "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug. The Hobbit: An Unexpected Journey is a 2012 epic high fantasy adventure film directed by Peter Jackson. It is the first instalment in a three-part film adaptation based on J. R. R. Tolkien’s 1937 novel The Hobbit. It is followed by The Desolation of Smaug (2013) and The Battle of the Five Armies (2014), and together, they act as a prequel to Jackson's The Lord of the Rings film trilogy. The film's screenplay was written by Jackson, his longtime collaborators Fran Walsh and Philippa Boyens, and Guillermo del Toro, who was originally chosen to direct the film before leaving the project in 2010."
-        },
-        {
-            "id": 1,
-            "title": "The Hobbit: The Desolation of Smaug",
-            "img": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/original/products/86974/86527/the_hobbit_the_desolution_of_smaug__final_poster_buy_original_movie_posters_at_starstills__35272__21743.1394515789.jpg?c=2",
-            "productionYear": 2013,
-            "time": 161,
-            "description": "Gandalf and Thorin Oakenshield meet at the Prancing Pony, and Gandalf convinces Thorin to take back Erebor and the Lonely Mountain. 12 months later, Thorin and his company are being pursued by Azog and his Orc party following the events of the previous film. They are ushered along by Gandalf to the nearby home of Beorn, a skin-changer who can take the form of a bear. That night, Azog is summoned to Dol Guldur by the Necromancer, who commands him to marshal his forces for war. Azog then delegates the hunt for Thorin to his son Bolg. The following day, Beorn escorts the company to the borders of Mirkwood, where Gandalf discovers Black Speech imprinted on an old ruin. This, and a prior request by Galadriel, urge him to investigate the tombs of the Nazgûl. He warns the company to remain on the path and leaves them. Upon entering the forest they lose their way and are ensnared by giant spiders. Bilbo then sets about freeing the dwarves with the help of his recently acquired invisibility ring. He subsequently drops the Ring and first begins to understand its dark influence after he brutally kills a creature to retrieve it."
-        },
-        {
-            "id": 2,
-            "title": "The Hobbit: The Battle of the Five Armies",
-            "img": "https://image.ceneostatic.pl/data/products/58268753/i-gb-eye-plakat-the-hobbit-battle-of-five-armies-bilbo.jpg",
-            "productionYear": 2014,
-            "time": 144,
-            "description": "Bilbo and the Dwarves watch from the Lonely Mountain as the dragon Smaug sets Laketown ablaze. Bard breaks out of prison, and eventually kills Smaug with the black arrow. Smaug's falling body crushes the Master of Laketown and his cronies, who were escaping on a boat with the town's gold. Bard becomes the new leader of Laketown and guides its people to seek refuge in the ruins of Dale. Thorin, having become possessive of the vast treasure in the mountain, searches obsessively for the Arkenstone, which Bilbo had previously found but kept hidden. Upon hearing that Laketown survivors have fled to Dale, he orders the entrance of the Lonely Mountain sealed off."
-        },
-        {
-            "id": 3,
-            "title": "Harry Potter and the Philosopher's Stone",
-            "img": "https://fwcdn.pl/fpo/05/71/30571/7529392.3.jpg",
-            "productionYear": 2001,
-            "time": 152,
-            "description": "Late one night, Albus Dumbledore and Minerva McGonagall, professors at Hogwarts School of Witchcraft and Wizardry, along with groundskeeper Rubeus Hagrid, deliver an orphaned infant named Harry Potter to his aunt and uncle, Petunia and Vernon Dursley, his only living relatives. Just before Harry's eleventh birthday, owls begin delivering letters addressed to him. When the abusive Dursleys refuse to allow Harry to open any, Hagrid arrives to personally deliver Harry's letter. Harry is a wizard and has been accepted to Hogwarts. Hagrid takes Harry to Diagon Alley for school supplies and gives him a pet owl he names Hedwig. Harry buys a wand that is connected to the dark wizard Lord Voldemort's own wand. Harry learns his parents have left him a fortune kept in Gringott's Wizarding Bank. Also, Harry is famous for surviving the same lethal curse that Voldemort cast to kill Harry's wizard parents, James and Lily Potter. The curse rebounded off Harry, destroying Voldemort's body, and left a lightning-bolt scar on Harry's forehead."
-        },
-        {
-            "id": 4,
-            "title": "No title - test defaults",
-            "productionYear": 1989,
-            "time": 90
-        }
-    ],
-
-
-
-    "halls":[
-        {
-            "id":1, 
-            "rowsAmount": 5,
-            "seatsAmount": 10
-        },
-        {
-            "id":2, 
-            "rowsAmount": 8,
-            "seatsAmount": 7
-        },
-        {
-            "id":3, 
-            "rowsAmount": 6,
-            "seatsAmount": 12
-        },
-        {
-            "id":4, 
-            "rowsAmount": 7,
-            "seatsAmount": 11
-        },
-        {
-            "id":5, 
-            "rowsAmount": 6,
-            "seatsAmount": 10
-        }
-    ],
-
-
-
-    "showings":[
-        {
-            "id":0,
-            "idMovie": 0,
-            "idHall": 1,
-            "sDate": "2022-01-01",
-            "sHour": "16:00"
-        },
-        {
-            "id":1,
-            "idMovie": 1,
-            "idHall": 3,
-            "sDate": "2022-01-10",
-            "sHour": "18:00"
-        },
-        {
-            "id":2,
-            "idMovie": 0,
-            "idHall": 4,
-            "sDate": "2022-01-01",
-            "sHour": "18:00"
-        },
-        {
-            "id":3,
-            "idMovie": 2,
-            "idHall": 2,
-            "sDate": "2022-01-05",
-            "sHour": "12:00"
-        },
-        {
-            "id":4,
-            "idMovie": 3,
-            "idHall": 5,
-            "sDate": "2022-01-03",
-            "sHour": "11:00"
-        },
-        {
-            "id":5,
-            "idMovie": 0,
-            "idHall": 2,
-            "sDate": "2022-01-01",
-            "sHour": "12:00"
-        },
-        {
-            "id":6,
-            "idMovie": 3,
-            "idHall": 1,
-            "sDate": "2022-01-02",
-            "sHour": "11:00"
-        },
-        {
-            "id":7,
-            "idMovie": 1,
-            "idHall": 3,
-            "sDate": "2022-01-02",
-            "sHour": "12:00"
-        },
-        {
-            "id":8,
-            "idMovie": 0,
-            "idHall": 5,
-            "sDate": "2022-01-02",
-            "sHour": "18:00"
-        },
-        {
-            "id":9,
-            "idMovie": 2,
-            "idHall": 2,
-            "sDate": "2022-01-03",
-            "sHour": "15:00"
-        },
-        {
-            "id":10,
-            "idMovie": 2,
-            "idHall": 3,
-            "sDate": "2022-01-03",
-            "sHour": "17:00"
-        }
-    ],
-
-
-
-    "tickets":[
-        {
-            "id":0,
-            "idShowing":0,
-            "firstname": "Robert",
-            "lastname": "Sokołowski",
-            "email": "rs@onet.pl",
-            "price": 20
-        },
-        {
-            "id":1,
-            "idShowing":0,
-            "firstname": "Karolina",
-            "lastname": "Sokołowska",
-            "email": "ks@op.pl",
-            "price": 16
-        }
-
-    ]
-
+  "movies": [
+    {
+      "id": 0,
+      "title": "The Hobbit: An Unexpected Journey",
+      "img": "https://m.media-amazon.com/images/I/71E9rZRPOLL._AC_SL1333_.jpg",
+      "productionYear": 2012,
+      "time": 169,
+      "description": "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug. The Hobbit: An Unexpected Journey is a 2012 epic high fantasy adventure film directed by Peter Jackson. It is the first instalment in a three-part film adaptation based on J. R. R. Tolkien’s 1937 novel The Hobbit. It is followed by The Desolation of Smaug (2013) and The Battle of the Five Armies (2014), and together, they act as a prequel to Jackson's The Lord of the Rings film trilogy. The film's screenplay was written by Jackson, his longtime collaborators Fran Walsh and Philippa Boyens, and Guillermo del Toro, who was originally chosen to direct the film before leaving the project in 2010."
+    },
+    {
+      "id": 1,
+      "title": "The Hobbit: The Desolation of Smaug",
+      "img": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/original/products/86974/86527/the_hobbit_the_desolution_of_smaug__final_poster_buy_original_movie_posters_at_starstills__35272__21743.1394515789.jpg?c=2",
+      "productionYear": 2013,
+      "time": 161,
+      "description": "Gandalf and Thorin Oakenshield meet at the Prancing Pony, and Gandalf convinces Thorin to take back Erebor and the Lonely Mountain. 12 months later, Thorin and his company are being pursued by Azog and his Orc party following the events of the previous film. They are ushered along by Gandalf to the nearby home of Beorn, a skin-changer who can take the form of a bear. That night, Azog is summoned to Dol Guldur by the Necromancer, who commands him to marshal his forces for war. Azog then delegates the hunt for Thorin to his son Bolg. The following day, Beorn escorts the company to the borders of Mirkwood, where Gandalf discovers Black Speech imprinted on an old ruin. This, and a prior request by Galadriel, urge him to investigate the tombs of the Nazgûl. He warns the company to remain on the path and leaves them. Upon entering the forest they lose their way and are ensnared by giant spiders. Bilbo then sets about freeing the dwarves with the help of his recently acquired invisibility ring. He subsequently drops the Ring and first begins to understand its dark influence after he brutally kills a creature to retrieve it."
+    },
+    {
+      "id": 2,
+      "title": "The Hobbit: The Battle of the Five Armies",
+      "img": "https://image.ceneostatic.pl/data/products/58268753/i-gb-eye-plakat-the-hobbit-battle-of-five-armies-bilbo.jpg",
+      "productionYear": 2014,
+      "time": 144,
+      "description": "Bilbo and the Dwarves watch from the Lonely Mountain as the dragon Smaug sets Laketown ablaze. Bard breaks out of prison, and eventually kills Smaug with the black arrow. Smaug's falling body crushes the Master of Laketown and his cronies, who were escaping on a boat with the town's gold. Bard becomes the new leader of Laketown and guides its people to seek refuge in the ruins of Dale. Thorin, having become possessive of the vast treasure in the mountain, searches obsessively for the Arkenstone, which Bilbo had previously found but kept hidden. Upon hearing that Laketown survivors have fled to Dale, he orders the entrance of the Lonely Mountain sealed off."
+    },
+    {
+      "id": 3,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "img": "https://fwcdn.pl/fpo/05/71/30571/7529392.3.jpg",
+      "productionYear": 2001,
+      "time": 152,
+      "description": "Late one night, Albus Dumbledore and Minerva McGonagall, professors at Hogwarts School of Witchcraft and Wizardry, along with groundskeeper Rubeus Hagrid, deliver an orphaned infant named Harry Potter to his aunt and uncle, Petunia and Vernon Dursley, his only living relatives. Just before Harry's eleventh birthday, owls begin delivering letters addressed to him. When the abusive Dursleys refuse to allow Harry to open any, Hagrid arrives to personally deliver Harry's letter. Harry is a wizard and has been accepted to Hogwarts. Hagrid takes Harry to Diagon Alley for school supplies and gives him a pet owl he names Hedwig. Harry buys a wand that is connected to the dark wizard Lord Voldemort's own wand. Harry learns his parents have left him a fortune kept in Gringott's Wizarding Bank. Also, Harry is famous for surviving the same lethal curse that Voldemort cast to kill Harry's wizard parents, James and Lily Potter. The curse rebounded off Harry, destroying Voldemort's body, and left a lightning-bolt scar on Harry's forehead."
+    },
+    {
+      "id": 4,
+      "title": "No title - test defaults",
+      "productionYear": 1989,
+      "time": 90
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "img": "https://static.wikia.nocookie.net/gonecordance/images/1/17/Chamberofsecrets.jpg/revision/latest?cb=20200514185837",
+      "productionYear": "2002",
+      "time": "161",
+      "description": "Spending the summer with the Dursleys, Harry Potter meets Dobby, a house-elf who warns him that it is too dangerous to return to Hogwarts. Dobby sabotages an important dinner for the Dursleys, who lock up Harry to prevent his return to Hogwarts. Harry's friend Ron Weasley and his brothers Fred and George rescue him in their father's flying Ford Anglia.\n\nHarry and the Weasley family are joined by Hermione Granger at a book-signing by Gilderoy Lockhart, Hogwarts' new Defence Against the Dark Arts teacher. Confronted by Draco Malfoy, Harry notices Malfoy's father, Lucius, slip a book into Ginny Weasley's cauldron. When Harry and Ron are blocked from entering Platform Nine and Three-Quarters at London King's Cross railway station, they take the flying car to Hogwarts; after crashing into the Whomping Willow and breaking Ron's wand, they receive detention.",
+      "id": 5
+    },
+    {
+      "title": "MyszoJeleń!",
+      "img": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1720870/437075_857074.jpg",
+      "productionYear": "2022",
+      "time": "999",
+      "description": "Zagrożony wyginięciem, najmniejszy przeżuwacz świata",
+      "id": 6
+    },
+    {
+      "title": "~kupa",
+      "img": "https://icon-library.com/images/none-icon/none-icon-0.jpg",
+      "productionYear": "1999",
+      "time": "7877887",
+      "description": "No description",
+      "id": 7
+    }
+  ],
+  "halls": [
+    {
+      "id": 1,
+      "rowsAmount": 5,
+      "seatsAmount": 10
+    },
+    {
+      "id": 2,
+      "rowsAmount": 8,
+      "seatsAmount": 7
+    },
+    {
+      "id": 3,
+      "rowsAmount": 6,
+      "seatsAmount": 12
+    },
+    {
+      "id": 4,
+      "rowsAmount": 7,
+      "seatsAmount": 11
+    },
+    {
+      "id": 5,
+      "rowsAmount": 6,
+      "seatsAmount": 10
+    }
+  ],
+  "showings": [
+    {
+      "id": 0,
+      "idMovie": 0,
+      "idHall": 1,
+      "sDate": "2022-01-01",
+      "sHour": "16:00"
+    },
+    {
+      "id": 1,
+      "idMovie": 1,
+      "idHall": 3,
+      "sDate": "2022-01-10",
+      "sHour": "18:00"
+    },
+    {
+      "id": 2,
+      "idMovie": 0,
+      "idHall": 4,
+      "sDate": "2022-01-01",
+      "sHour": "18:00"
+    },
+    {
+      "id": 3,
+      "idMovie": 2,
+      "idHall": 2,
+      "sDate": "2022-01-05",
+      "sHour": "12:00"
+    },
+    {
+      "id": 4,
+      "idMovie": 3,
+      "idHall": 5,
+      "sDate": "2022-01-03",
+      "sHour": "11:00"
+    },
+    {
+      "id": 5,
+      "idMovie": 0,
+      "idHall": 2,
+      "sDate": "2022-01-01",
+      "sHour": "12:00"
+    },
+    {
+      "id": 6,
+      "idMovie": 3,
+      "idHall": 1,
+      "sDate": "2022-01-02",
+      "sHour": "11:00"
+    },
+    {
+      "id": 7,
+      "idMovie": 1,
+      "idHall": 3,
+      "sDate": "2022-01-02",
+      "sHour": "12:00"
+    },
+    {
+      "id": 8,
+      "idMovie": 0,
+      "idHall": 5,
+      "sDate": "2022-01-02",
+      "sHour": "18:00"
+    },
+    {
+      "id": 9,
+      "idMovie": 2,
+      "idHall": 2,
+      "sDate": "2022-01-03",
+      "sHour": "15:00"
+    },
+    {
+      "id": 10,
+      "idMovie": 2,
+      "idHall": 3,
+      "sDate": "2022-01-03",
+      "sHour": "17:00"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 0,
+      "idShowing": 0,
+      "firstname": "Robert",
+      "lastname": "Sokołowski",
+      "email": "rs@onet.pl",
+      "price": 20
+    },
+    {
+      "id": 1,
+      "idShowing": 0,
+      "firstname": "Karolina",
+      "lastname": "Sokołowska",
+      "email": "ks@op.pl",
+      "price": 16
+    }
+  ]
 }

@@ -1,27 +1,53 @@
 import React from "react";
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 
-const AddMovie = () =>
+const AddMovie = ({addMovieHandler}) =>
 {
-/*function SaveMovie  (e) 
+    /* --- Adding Function ---*/
+function handleSaveMovie  (e) 
     {
         e.preventDefault();
         if(
             document.getElementById("title-alert").innerHTML === "" &&
-            document.getElementById("duration-alert").innerHTML === "" 
+            document.getElementById("duration-alert").innerHTML === ""
         )
         {
             const title = document.getElementById("title").value;
-            const img = document.getElementById("image").value;
+            let img = document.getElementById("image").value;
             const year = document.getElementById("year").value;
             const duration = document.getElementById("duration").value;
-            const description = document.getElementById("description").value;
-           // save(title,img,year,duration,description);
-           this.props.addMovieHandler(title,img,year,duration,description);
-           this.props.history.push("/");
+            let description = document.getElementById("description").value;
+
+            if(!img && !description)
+            {
+
+                img = "https://icon-library.com/images/none-icon/none-icon-0.jpg"
+                description = "No description"
+                
+            }
+            if(!img)
+            {
+             img = "https://icon-library.com/images/none-icon/none-icon-0.jpg"
+            // addMovieHandler(title,year,duration,description); 
+            }
+
+            if(!description)
+               {
+                description = "No description"
+               // addMovieHandler(title,img,year,duration);
+               }
+
+           if(title && duration)
+           {
+
+            addMovieHandler(title,img,year,duration,description);
+            document.getElementById("success-alert").innerHTML = "Movie added successfully!"
+           }
         }
-    }*/
+    }
+
+    /* --- VALIDATION --- */
 
     function CheckTitle(title)
     {
@@ -72,7 +98,7 @@ const AddMovie = () =>
     return(
         <div className="form-content"> 
             <h1>Add movie</h1>
-            <form>
+            
 
                 {/* TITLE AND LINK IMAGE INPUTS */}
                 <div className="form-group col-md-4">
@@ -106,9 +132,46 @@ const AddMovie = () =>
                         <textarea id="description" className="form-control" />               
                 </div>
 
-                <button type="submit" className="btn btn-primary" >Add</button>
-            </form>
+                <button type="submit" className="btn btn-primary" onClick={ e => handleSaveMovie(e)} >Add</button>
+                <div className="alert success" id="success-alert"></div>
+            
         </div>
     );
 }
+
+/*AddMovie.PropTypes = {
+
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    productionYear: PropTypes.number,
+    time: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    addMovieHandler: PropTypes.func.isRequired
+}*/
+
+AddMovie.protoTypes =
+{
+    /*id(props, propName)
+    {
+        if(!props[propName])
+        {
+            return new Error(propName + "doesn't exist")
+        }
+    },*/
+
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    productionYear: PropTypes.number,
+    time: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    addMovieHandler: PropTypes.func.isRequired
+}
+
+AddMovie.defaultProps=
+{
+    img: "https://icon-library.com/images/none-icon/none-icon-0.jpg",
+    description: "No description"
+}
+
 export default AddMovie;

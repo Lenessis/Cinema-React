@@ -1,7 +1,9 @@
 import React from "react";
 import Movie from "./Movie";
+import { deleteMovieAction, updateMovieAction } from "../actions/actions";
 import { Link } from "react-router-dom";
 import '../stylesheets/Movies.css';
+import { useDispatch } from 'react-redux'
 
 /* 
     * This component describes lists of all avaible moviesin cinema. 
@@ -10,6 +12,17 @@ import '../stylesheets/Movies.css';
 
 const Movies = (props) =>
 {
+    const dispatch = useDispatch();
+
+    function deleteMovie(id)
+    {
+        dispatch(deleteMovieAction(id))
+    }
+
+    function editMovie (id, title, img, year, time, description)
+    {
+        dispatch(updateMovieAction(id, title, img, year, time, description))
+    }
 
     return (
         <div>
@@ -27,6 +40,8 @@ const Movies = (props) =>
                     productionYear = {movie.productionYear}
                     time = {movie.time}
                     description = {movie.description}
+                    deleteMovie = {deleteMovie}
+                    editMovie = {editMovie}
                     />
                 );
             })}  
