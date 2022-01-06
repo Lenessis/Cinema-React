@@ -40,7 +40,7 @@
     },
     {
       "title": "Harry Potter and the Chamber of Secrets",
-      "img": "https://static.wikia.nocookie.net/gonecordance/images/1/17/Chamberofsecrets.jpg/revision/latest?cb=20200514185837",
+      "img": "https://static.wikia.nocookie.net/gonecordance/images/1/17/Chamberofsecrets.jpg",
       "productionYear": "2002",
       "time": "161",
       "description": "Spending the summer with the Dursleys, Harry Potter meets Dobby, a house-elf who warns him that it is too dangerous to return to Hogwarts. Dobby sabotages an important dinner for the Dursleys, who lock up Harry to prevent his return to Hogwarts. Harry's friend Ron Weasley and his brothers Fred and George rescue him in their father's flying Ford Anglia.\n\nHarry and the Weasley family are joined by Hermione Granger at a book-signing by Gilderoy Lockhart, Hogwarts' new Defence Against the Dark Arts teacher. Confronted by Draco Malfoy, Harry notices Malfoy's father, Lucius, slip a book into Ginny Weasley's cauldron. When Harry and Ron are blocked from entering Platform Nine and Three-Quarters at London King's Cross railway station, they take the flying car to Hogwarts; after crashing into the Whomping Willow and breaking Ron's wand, they receive detention.",
@@ -53,14 +53,6 @@
       "time": "999",
       "description": "Zagrożony wyginięciem, najmniejszy przeżuwacz świata",
       "id": 6
-    },
-    {
-      "title": "~kupa",
-      "img": "https://icon-library.com/images/none-icon/none-icon-0.jpg",
-      "productionYear": "1999",
-      "time": "7877887",
-      "description": "No description",
-      "id": 7
     }
   ],
   "halls": [

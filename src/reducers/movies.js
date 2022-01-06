@@ -1,7 +1,7 @@
 export const movies = (state = [], action) => {
     
     switch (action.type) {
-      case 'FETCH_MOVIE_SUCCESS':
+      case 'FETCH_MOVIES_SUCCESS':
         return [...action.movies];
       case 'UPDATED_MOVIE':
         let anotherState = state
