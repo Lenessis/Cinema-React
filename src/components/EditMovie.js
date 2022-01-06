@@ -11,7 +11,7 @@ function EditMovie ({editMovieHandler})
     //fetching film value
     const id = useParams().id;     
     const movie = useSelector(state=> state.movies[id])
-    function handleEditMovie  (e) 
+    function handleSaveMovie  (e) 
     {
         e.preventDefault();
         if(
@@ -45,7 +45,7 @@ function EditMovie ({editMovieHandler})
            if(title && duration)
            {
 
-            editMovieHandler(title,img,year,duration,description);
+            editMovieHandler(id,title,img,year,duration,description);
             document.getElementById("success-alert").innerHTML = "Movie updated successfully!"
            }
         }
@@ -139,7 +139,8 @@ function EditMovie ({editMovieHandler})
                         <textarea id="description" className="form-control" defaultValue={movie.description?movie.description:''} />               
                 </div>
 
-                <button type="submit" className="btn btn-primary">Save</button>
+                <button type="submit" className="btn btn-primary" onClick={ e => handleSaveMovie(e)}>Save</button>
+                <div className="alert success" id="success-alert"></div>
             </form>
         </div>
     );

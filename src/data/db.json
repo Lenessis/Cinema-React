@@ -51,8 +51,16 @@
       "img": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1720870/437075_857074.jpg",
       "productionYear": "2022",
       "time": "999",
-      "description": "Zagrożony wyginięciem ",
+      "description": "Zagrożony wyginięciem, najmniejszy przeżuwacz świata",
       "id": 6
+    },
+    {
+      "title": "~kupa",
+      "img": "https://icon-library.com/images/none-icon/none-icon-0.jpg",
+      "productionYear": "1999",
+      "time": "7877887",
+      "description": "No description",
+      "id": 7
     }
   ],
   "halls": [
