@@ -9,7 +9,8 @@ import {  useParams } from "react-router-dom";
 function EditMovie ({editMovieHandler})
 {
     //fetching film value
-    const id = useParams().id;     
+    const id = useParams().id; 
+    console.log(useParams())    
     const movie = useSelector(state=> state.movies[id])
     function handleSaveMovie  (e) 
     {

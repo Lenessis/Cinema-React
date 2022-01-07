@@ -73,7 +73,7 @@ const Movie = props =>
                             <button className="btn btn-primary buttons-child" onClick={e => {e.preventDefault(); props.deleteMovie(props.id)}}>Delete</button>
                             
                             
-                            <Link to={"/showings?idMovie="+props.id}>
+                            <Link to={`/showings/${props.id}`}>
                                 <button className="btn btn-primary buttons-child">Book the ticket</button>
                             </Link>                           
                         </div>

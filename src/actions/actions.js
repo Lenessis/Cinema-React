@@ -1,5 +1,5 @@
 import { getAllMovies, updateMovie,addMovie, deleteMovie, getMovieByID} from "../api/MoviesApi";
-import { getAllShowings } from "../api/ShowingsApi";
+import { getAllShowings,getMovieShowing } from "../api/ShowingsApi";
 import { getAllHalls } from "../api/HallsApi";
 
 // --- MOVIES
@@ -81,6 +81,20 @@ export const movieFetched = (movie) => ({
   export const showingsFetched = (showings) => ({
     type: 'FETCH_SHOWINGS_SUCCESS',
     showings,
+  });
+
+  export const showingsSpecificMovie = (idMovie) => (dispatch) => {
+    return getMovieShowing(idMovie).then(data =>{
+      dispatch(showingsSpecificMovieFetched(data));
+    }).catch(error =>{
+      throw(error);
+    });
+  }
+
+  export const showingsSpecificMovieFetched = (showingsM) =>
+  ({
+    type: 'FETCH_SHOWING_MOVIE_SUCCESS',
+    showingsM
   });
 
   // --- HALLS

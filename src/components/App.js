@@ -12,6 +12,7 @@ import Header from './Header';
 import EditMovie from './EditMovie';
 import AddMovie from './AddMovie';
 import Showing from "./Showings";
+import { getMovieShowing } from "../api/ShowingsApi";
 
 /*
  * App component is used to read data from json database and control it (like edit, add, remove).
@@ -41,7 +42,7 @@ function App ()
         fetchData()
       }, [])
 
-console.log(movies)
+
 function handleSave(title,img,year,duration,description)
 {
     dispatch(createMovieAction(title,img,year,duration,description));
@@ -51,8 +52,6 @@ function handleEdit(id, title,img,year,duration,description)
 {
     dispatch(updateMovieAction(id, title,img,year,duration,description));
 }
-   
-
 
     return(
         <div>
@@ -79,9 +78,11 @@ function handleEdit(id, title,img,year,duration,description)
                            {/*} <Route path='idMovie' /> */}
                     </Route>
                     <Route
-                        path="/showings"
+                        path="/showings/"
                         element = {<Showing showings = {showings} movies = {movies} halls = {halls}/>}
-                    />
+                    >
+                        <Route path=':idMovie'  element={<Showing showings = {showings} movies = {movies} halls = {halls} />} ></Route>
+                    </Route>
                 </Routes>
                     
                 
