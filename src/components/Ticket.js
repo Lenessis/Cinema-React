@@ -5,8 +5,13 @@ import '../stylesheets/form.css'
 
 const Ticket = (props) =>
 {
+    var listOfSeats;
 
     //dodać funkcję, która zatrzyma w razie czego submit
+    function BuyTicket()
+    {
+        listOfSeats = props.seatsList()
+    }
 
     function CheckDate(date)
     {
@@ -106,7 +111,7 @@ const Ticket = (props) =>
             <h1>Ticket</h1>
             {/* Zrobić, żeby wyświetlało tu się miejsce i nazwa filmu!!! */}
             <p>Buy a ticket for <b>{props.title}</b> </p>
-            <form>
+            
 
                 {/* DATE AND TIME INPUTS */}
                 <div className="form-row col-md-6">
@@ -153,9 +158,8 @@ const Ticket = (props) =>
                         </select>                   
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
-
+                <button type="submit" className="btn btn-primary" onClick={e=>{BuyTicket()}}>Submit</button>
+            
         </div>
     );
 }

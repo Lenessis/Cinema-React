@@ -10,12 +10,31 @@ import '../stylesheets/Hall.css';
 //jedno miejsce ma id, należy do jakiejś sali i ma status Zarezerwowane lub nie
 const Hall = props =>
 {
-    
+    var reservedSeats = new Array(0);
+
     function NextChar(x)
     {
         return String.fromCharCode(x.charCodeAt(0) + 1);
         /* Solution: https://stackoverflow.com/questions/12504042/what-is-a-method-that-can-be-used-to-increment-letters */
     }
+
+    function ReserveSeat(id)
+    {  
+        var element = document.getElementById(id);
+        if(!reservedSeats.includes(element.innerHTML))
+        {           
+            element.classList.add("chosenSeat");
+            reservedSeats.push(id);
+        }
+        else
+        {
+            let removeIndex = reservedSeats.indexOf(element.innerHTML)
+            element.classList.remove("chosenSeat");
+            reservedSeats.splice(removeIndex,1)
+        }
+        props.list(reservedSeats);
+    }
+
 
      function RenderSingleRow(rowName, amountOfSeats)
     {
@@ -23,8 +42,9 @@ const Hall = props =>
 
         for(let i = 1; i <= amountOfSeats; i++)
         {
+            let idSeat = rowName+i
             seats.push(
-                <div className="single-seat">
+                <div className="single-seat" id={idSeat} onClick={e=>{ReserveSeat(idSeat)}}>
                     {rowName}{i}
                 </div>
             );

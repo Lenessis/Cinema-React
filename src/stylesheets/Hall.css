@@ -30,3 +30,9 @@
     
     background-color: rgb(235, 235, 235); /* temporary */
 }
+
+.chosenSeat
+{
+    font-weight: 700;
+    background-color:lime;
+}

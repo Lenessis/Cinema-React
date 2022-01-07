@@ -37,6 +37,20 @@ function Showings (props)
         x.style.visibility = "hidden";
     }
 
+    var seatsList = new Array(0);
+    function ListOfSeats(list)
+    {
+        seatsList = list
+        console.log("showing ", list)
+        console.log("showing 2 ", seatsList)
+    }
+
+    function sendSeatsList()
+    {
+        return seatsList;
+    }
+    
+
 //wyszukiwanie, sortowanie po dacie i godzinie
     if(listOfShowings.length === 0)
         {
@@ -100,7 +114,7 @@ function Showings (props)
                                                     {
                                                         return(
                                                             <div>
-                                                                <Hall id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount}/>
+                                                                <Hall id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount} list={ListOfSeats}/>
                                                             </div>
                                                             
                                                         );
@@ -116,7 +130,7 @@ function Showings (props)
                                                     {
                                                         return(
                                                             <div>
-                                                                <Ticket title = {movie.title} date = {showing.sDate} time ={showing.sHour}/>
+                                                                <Ticket title = {movie.title} date = {showing.sDate} time ={showing.sHour} seatsList={sendSeatsList}/>
                                                             </div>
                                                             
                                                         );
