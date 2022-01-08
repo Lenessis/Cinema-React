@@ -50,3 +50,14 @@
     cursor: pointer;
     background-color: rgb(71, 207, 71);
 }
+
+.reservedSeat
+{
+    color: rgb(68, 68, 68);
+    background-color:rgb(177, 177, 177);
+}
+.reservedSeat:hover
+{
+    cursor: default;
+    background-color:rgb(177, 177, 177);
+}

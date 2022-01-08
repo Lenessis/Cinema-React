@@ -17,7 +17,7 @@ const Hall = props =>
         return String.fromCharCode(x.charCodeAt(0) + 1);
         /* Solution: https://stackoverflow.com/questions/12504042/what-is-a-method-that-can-be-used-to-increment-letters */
     }
-
+console.log(props.reservedList)
     function ReserveSeat(id)
     {  
         var element = document.getElementById(id);
@@ -44,12 +44,25 @@ const Hall = props =>
         for(let i = 1; i <= amountOfSeats; i++)
         {
             let idSeat = props.idS+rowName+i
-            seats.push(
-                <div className="single-seat" id={idSeat} onClick={e=>{ReserveSeat(idSeat)}}>
-                    {rowName}{i}
+            let content = rowName+i
+            if(props.reservedList.includes(content))
+            {
+                seats.push(
+                    <div className="single-seat reservedSeat" id={idSeat} >
+                    {content}
                 </div>
-            );
-        }
+                );
+            }
+            else
+            {
+                seats.push(
+                    <div className="single-seat" id={idSeat} onClick={e=>{ReserveSeat(idSeat)}}>
+                        {content}
+                    </div>
+                );
+            }
+            }
+            
 
         return seats;
     }

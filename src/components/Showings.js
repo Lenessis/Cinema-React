@@ -50,6 +50,7 @@ function Showings (props)
 
     // --- List of seats
     var seatsList = new Array(0);
+    var reservedSeatsList = new Array(props.showings.length);
     function ListOfSeats(list)
     {
         seatsList = list
@@ -63,16 +64,25 @@ function Showings (props)
     function NumberOfReservedSeats(id)
     {
         let count = 0;
+        var temp = new Array(0);
         for(let i = 0; i<props.tickets.length;i++)
         {
             if(id == props.tickets[i].idShowing)
             {
-                count++;
+                for(let j = 0; j< props.tickets[i].seats.length; j++)
+                {
+                    temp.push(props.tickets[i].seats[j])
+                    count++;
+                }
+                               
             }
         }
+        reservedSeatsList[id]=temp;
         return count;
     }
+    console.log(reservedSeatsList)
     
+
 
     if(listOfShowings.length === 0)
         {
@@ -150,7 +160,7 @@ function Showings (props)
                                                     {
                                                         return(
                                                             <div>
-                                                                <Hall idS= {showing.id} id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount} list={ListOfSeats}/>
+                                                                <Hall idS= {showing.id} id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount} list={ListOfSeats} reservedList={reservedSeatsList[showing.id]}/>
                                                             </div>
                                                             
                                                         );
