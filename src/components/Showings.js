@@ -3,15 +3,9 @@ import Ticket from './Ticket';
 
 import '../stylesheets/Showings.css';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { createTicketAction} from '../actions/actions'
 
-/*
-    lista zarezzerwowanych miejsc jest w seansie (showings).
-     W hall wczytują się 2 listy: 
-     - lista rezerwowanych miejsc przez klienta na bieżąco i lista zarezerwowanych miejsc w bazie (od Showings)
-    przy sprawdzaniu czy dany element został zaznaczony trzeba sprawdzic, czy aby nie znajduje sie juz na liscie zarezerwowanych miejsc
-    zarezerwowane miejsca maja swoja klase (style)
-    dodac hoover do miejscach
-*/
 
 function Showings (props)
 {
@@ -61,6 +55,7 @@ function Showings (props)
         return seatsList;
     }
 
+    // counting previous reserved seats and adding them to the array to send it to Hall component
     function NumberOfReservedSeats(id)
     {
         let count = 0;
@@ -73,16 +68,52 @@ function Showings (props)
                 {
                     temp.push(props.tickets[i].seats[j])
                     count++;
-                }
-                               
+                }                               
             }
         }
         reservedSeatsList[id]=temp;
         return count;
     }
-    console.log(reservedSeatsList)
     
+    //buy ticket
+    const dispatch = useDispatch()
+    function handleSaveTicket(idS, firstname, lastname, email, price, seats)
+    {
+        dispatch(createTicketAction(idS, firstname, lastname, email, price, seats));
+    }
 
+    // top 3
+    function Top3()
+    {
+        let countArray = new Array(props.showings.length);
+        let k= 0
+        props.showings.map((showing)=>{
+
+            countArray[k] =  new Array(2)
+            countArray[k][1] = showing.id
+            let count = 0;
+
+            for(let i = 0; i<props.tickets.length;i++)
+            {                
+                
+                if(showing.id == props.tickets[i].idShowing)
+                {
+                    for(let j = 0; j< props.tickets[i].seats.length; j++)
+                    {
+                        count++;
+                    }                               
+                }
+                               
+            }
+            countArray[k][0] =count;
+            k++;
+        })
+       // countArray.sort((a,b,x)=>a[x,0]>b[x,0])
+       // countArray = countArray.slice(0,3)
+        console.log("showings ticket", countArray)
+        //return count;
+    }
+    Top3()
 
     if(listOfShowings.length === 0)
         {
@@ -176,7 +207,7 @@ function Showings (props)
                                                     {
                                                         return(
                                                             <div>
-                                                                <Ticket title = {movie.title} date = {showing.sDate} time ={showing.sHour} seatsList={sendSeatsList}/>
+                                                                <Ticket idS = {showing.id} title = {movie.title} date = {showing.sDate} time ={showing.sHour} seatsList={sendSeatsList} addTicket={handleSaveTicket}/>
                                                             </div>
                                                             
                                                         );

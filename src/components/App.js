@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-//import { uuid } from "uuidv4";
+import React, {useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import {createMovieAction,  fetchMoviesFromApi, updateMovieAction, fetchShowingsFromApi, fetchHallsFromApi, fetchTicketsFromApi} from '../actions/actions'
 import { useSelector, useDispatch } from 'react-redux'
-
-//import MoviesApi from '../api/MoviesApi';
 
 import Movies from './Movies';
 import Header from './Header';
@@ -16,14 +13,12 @@ import Showing from "./Showings";
 /*
  * App component is used to read data from json database and control it (like edit, add, remove).
  * Installing packages
- * npm install uuidv4
  * npm install react-router-dom --save
 */
 
 
 function App ()
 {
-    /* new one */
     const movies = useSelector(state => state.movies)
     const showings = useSelector(state => state.showings)
     const halls = useSelector(state => state.halls)

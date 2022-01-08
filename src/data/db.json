@@ -87,77 +87,77 @@
       "id": 0,
       "idMovie": 0,
       "idHall": 1,
-      "sDate": "2022-01-01",
+      "sDate": "2022-02-01",
       "sHour": "16:00"
     },
     {
       "id": 1,
       "idMovie": 1,
       "idHall": 3,
-      "sDate": "2022-01-10",
+      "sDate": "2022-02-10",
       "sHour": "18:00"
     },
     {
       "id": 2,
       "idMovie": 0,
       "idHall": 4,
-      "sDate": "2022-01-01",
+      "sDate": "2022-02-01",
       "sHour": "18:00"
     },
     {
       "id": 3,
       "idMovie": 2,
       "idHall": 2,
-      "sDate": "2022-01-05",
+      "sDate": "2022-02-05",
       "sHour": "12:00"
     },
     {
       "id": 4,
       "idMovie": 3,
       "idHall": 5,
-      "sDate": "2022-01-03",
+      "sDate": "2022-02-03",
       "sHour": "11:00"
     },
     {
       "id": 5,
       "idMovie": 0,
       "idHall": 2,
-      "sDate": "2022-01-01",
+      "sDate": "2022-02-01",
       "sHour": "12:00"
     },
     {
       "id": 6,
       "idMovie": 3,
       "idHall": 1,
-      "sDate": "2022-01-02",
+      "sDate": "2022-02-02",
       "sHour": "11:00"
     },
     {
       "id": 7,
       "idMovie": 1,
       "idHall": 3,
-      "sDate": "2022-01-02",
+      "sDate": "2022-02-02",
       "sHour": "12:00"
     },
     {
       "id": 8,
       "idMovie": 0,
       "idHall": 5,
-      "sDate": "2022-01-02",
+      "sDate": "2022-02-02",
       "sHour": "18:00"
     },
     {
       "id": 9,
       "idMovie": 2,
       "idHall": 2,
-      "sDate": "2022-01-03",
+      "sDate": "2022-02-03",
       "sHour": "15:00"
     },
     {
       "id": 10,
       "idMovie": 2,
       "idHall": 3,
-      "sDate": "2022-01-03",
+      "sDate": "2022-02-03",
       "sHour": "17:00"
     }
   ],
@@ -169,7 +169,9 @@
       "lastname": "Sokołowski",
       "email": "rs@onet.pl",
       "price": 20,
-      "seats":["B5"]
+      "seats": [
+        "B5"
+      ]
     },
     {
       "id": 1,
@@ -178,7 +180,10 @@
       "lastname": "Sokołowska",
       "email": "ks@op.pl",
       "price": 16,
-      "seats":["B6","B7"]
+      "seats": [
+        "B6",
+        "B7"
+      ]
     },
     {
       "id": 2,
@@ -187,7 +192,64 @@
       "lastname": "Wejcher",
       "email": "kw@gmail.com",
       "price": 16,
-      "seats":["A1"]
+      "seats": [
+        "A1"
+      ]
+    },
+    {
+      "idShowing": 0,
+      "firstname": "Kazimierz",
+      "lastname": "Laskowski",
+      "email": "lacha@gmail.com",
+      "price": "16",
+      "seats": [
+        "C9"
+      ],
+      "id": 3
+    },
+    {
+      "idShowing": 2,
+      "firstname": "Joanna",
+      "lastname": "Kazimierczyk",
+      "email": "joasia@gmail.com",
+      "price": "20",
+      "seats": [
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "id": 4
+    },
+    {
+      "idShowing": 5,
+      "firstname": "Leokadia",
+      "lastname": "Zacha",
+      "email": "lodzia@onet.pl",
+      "price": "16",
+      "seats": [
+        "G2"
+      ],
+      "id": 5
+    },
+    {
+      "idShowing": 6,
+      "firstname": "Andżelika",
+      "lastname": "Bogacz",
+      "email": "ab@op.pl",
+      "price": "16",
+      "seats": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "id": 6
     }
   ]
 }
