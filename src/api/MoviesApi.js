@@ -11,12 +11,6 @@
  */
 //import axios from 'axios';
 
-/* --- PREVIOUS !!!
-export default axios.create({
-    baseURL:"http://localhost:3005"
-});
-*/
-
  const axios = require('axios');
 
 export const getAllMovies = async () => {
@@ -62,37 +56,4 @@ export const getMovieByID = async (id) => {
     .catch((error) => console.log(error))
   }
 
-  export const addMovieWithoutImgAndDesc = async (title, year, time) => {
-    return await axios.post("http://localhost:3005/movies",
-    {
-        title: title,
-        productionYear: year,
-        time: time
-    })
-    .then((response) => {return response.data})
-    .catch((error) => console.log(error))
-  }
-
-  export const addMovieWithoutImg = async (title, year, time, descriprion) => {
-    return await axios.post("http://localhost:3005/movies",
-    {
-        title: title,
-        productionYear: year,
-        time: time,
-        description: descriprion
-    })
-    .then((response) => {return response.data})
-    .catch((error) => console.log(error))
-  }
-
-  export const addMovieWithoutDesc = async (title, img, year, time) => {
-    return await axios.post("http://localhost:3005/movies",
-    {
-        title: title,
-        img: img,
-        productionYear: year,
-        time: time
-    })
-    .then((response) => {return response.data})
-    .catch((error) => console.log(error))
-  }
+ 

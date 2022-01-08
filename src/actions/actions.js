@@ -1,6 +1,7 @@
 import { getAllMovies, updateMovie,addMovie, deleteMovie, getMovieByID} from "../api/MoviesApi";
 import { getAllShowings,getMovieShowing } from "../api/ShowingsApi";
 import { getAllHalls } from "../api/HallsApi";
+import { getAllTickets, addTicket } from "../api/TicketsApi";
 
 // --- MOVIES
 export const fetchMoviesFromApi = () => (dispatch) => {
@@ -111,3 +112,31 @@ export const movieFetched = (movie) => ({
     type: 'FETCH_HALLS_SUCCESS',
     halls,
   });
+
+  // --- TICKETS
+
+  export const fetchTicketsFromApi = () => (dispatch) => {
+    return getAllTickets().then(data => {
+      dispatch(ticketsFetched(data));
+    }).catch(error => {
+      throw(error);
+    });
+  }
+  
+  export const ticketsFetched = (tickets) => ({
+    type: 'FETCH_TICKETS_SUCCESS',
+    tickets,
+  });
+
+  export const createTicketAction = (idShow, firstname, lastname, email, price, seats) => (dispatch) => {
+    return addTicket(idShow, firstname, lastname, email, price, seats).then(data => {
+      dispatch(ticketCreated(data));
+    }).catch(error => {
+      throw(error);
+    });
+  }
+
+  export const ticketCreated = (newTicket) => ({
+    type: 'CREATE_TICKET',
+    newTicket
+  })

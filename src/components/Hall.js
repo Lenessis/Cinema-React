@@ -24,7 +24,7 @@ const Hall = props =>
         if(!reservedSeats.includes(element.innerHTML))
         {           
             element.classList.add("chosenSeat");
-            reservedSeats.push(id);
+            reservedSeats.push(element.innerHTML);
         }
         else
         {
@@ -33,6 +33,7 @@ const Hall = props =>
             reservedSeats.splice(removeIndex,1)
         }
         props.list(reservedSeats);
+        console.log(reservedSeats)
     }
 
 
@@ -42,7 +43,7 @@ const Hall = props =>
 
         for(let i = 1; i <= amountOfSeats; i++)
         {
-            let idSeat = rowName+i
+            let idSeat = props.idS+rowName+i
             seats.push(
                 <div className="single-seat" id={idSeat} onClick={e=>{ReserveSeat(idSeat)}}>
                     {rowName}{i}

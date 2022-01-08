@@ -152,7 +152,7 @@ const Ticket = (props) =>
                 {/* DISCOUNT SELECT */}
                 <div className="form-group col-md-6">
                     <label for="Discount">Discount</label>
-                        <select id="discount" className="form-control">
+                        <select id="discount" className="form-control" defaultValue="20">
                             <option value="20" selected>Normal - 20 PLN</option>
                             <option value="16">Concessionary - 16 PLN</option>
                         </select>                   

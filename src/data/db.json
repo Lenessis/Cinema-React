@@ -168,7 +168,8 @@
       "firstname": "Robert",
       "lastname": "Sokołowski",
       "email": "rs@onet.pl",
-      "price": 20
+      "price": 20,
+      "seats":["B5"]
     },
     {
       "id": 1,
@@ -176,7 +177,17 @@
       "firstname": "Karolina",
       "lastname": "Sokołowska",
       "email": "ks@op.pl",
-      "price": 16
+      "price": 16,
+      "seats":["B6","B7"]
+    },
+    {
+      "id": 2,
+      "idShowing": 0,
+      "firstname": "Karolina",
+      "lastname": "Wejcher",
+      "email": "kw@gmail.com",
+      "price": 16,
+      "seats":["A1"]
     }
   ]
 }

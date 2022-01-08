@@ -4,25 +4,36 @@ import Ticket from './Ticket';
 import '../stylesheets/Showings.css';
 import { useParams } from 'react-router-dom';
 
+/*
+    lista zarezzerwowanych miejsc jest w seansie (showings).
+     W hall wczytują się 2 listy: 
+     - lista rezerwowanych miejsc przez klienta na bieżąco i lista zarezerwowanych miejsc w bazie (od Showings)
+    przy sprawdzaniu czy dany element został zaznaczony trzeba sprawdzic, czy aby nie znajduje sie juz na liscie zarezerwowanych miejsc
+    zarezerwowane miejsca maja swoja klase (style)
+    dodac hoover do miejscach
+*/
+
 function Showings (props)
 {
+    // --- Showing all or specific showings depends on params
     const idMovie = useParams().idMovie;
     var specificShowings = new Array(0);
     var listOfShowings = props.showings;
 
-        if(idMovie)
+    if(idMovie)
+    {
+        for(let i=0;i< props.showings.length; i++)
         {
-            for(let i=0;i< props.showings.length; i++)
+            if(props.showings[i].idMovie == idMovie)
             {
-                if(props.showings[i].idMovie == idMovie)
-                {
-                    specificShowings.push(props.showings[i]);
-                }
-                
-            }
-            listOfShowings = specificShowings;
-        }    
-        
+                specificShowings.push(props.showings[i]);
+            }           
+        }
+
+        listOfShowings = specificShowings;
+    }    
+ 
+     // --- Hiddenbox
 
     function ShowBuyDetails(id)
     {
@@ -37,23 +48,35 @@ function Showings (props)
         x.style.visibility = "hidden";
     }
 
+    // --- List of seats
     var seatsList = new Array(0);
     function ListOfSeats(list)
     {
         seatsList = list
-        console.log("showing ", list)
-        console.log("showing 2 ", seatsList)
     }
 
     function sendSeatsList()
     {
         return seatsList;
     }
+
+    function NumberOfReservedSeats(id)
+    {
+        let count = 0;
+        for(let i = 0; i<props.tickets.length;i++)
+        {
+            if(id == props.tickets[i].idShowing)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
     
 
-//wyszukiwanie, sortowanie po dacie i godzinie
     if(listOfShowings.length === 0)
         {
+            // If there is no showings for specific movie
             return(
             <div className='empty'>There isn't any avaible showings!</div>
             );
@@ -69,6 +92,7 @@ function Showings (props)
                             <th scope="col">Movie</th>
                             <th scope="col">Date</th>
                             <th scope="col">Time</th>
+                            <th scope="col">Seats</th>
                             <th scope="col"></th>
                             </tr>
                         </thead>
@@ -92,6 +116,18 @@ function Showings (props)
                                     <td>{showing.sDate}</td>
                                     <td>{showing.sHour}</td>
                                     <td>
+                                        {NumberOfReservedSeats(showing.id)}
+                                        /
+                                        {props.halls.map((hall)=>
+                                        {
+                                            if(showing.idHall === hall.id)
+                                            {
+                                                return hall.rowsAmount*hall.seatsAmount;
+                                            }
+                                            return null;
+                                        })}
+                                    </td>
+                                    <td>
                                         <button className="btn btn-primary" onClick={e =>ShowBuyDetails(showing.id)}>
                                             Buy ticket
                                         </button>
@@ -114,7 +150,7 @@ function Showings (props)
                                                     {
                                                         return(
                                                             <div>
-                                                                <Hall id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount} list={ListOfSeats}/>
+                                                                <Hall idS= {showing.id} id = {showing.idHall} rowsAmount={hall.rowsAmount} seatsAmount={hall.seatsAmount} list={ListOfSeats}/>
                                                             </div>
                                                             
                                                         );

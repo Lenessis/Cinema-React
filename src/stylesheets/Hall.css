@@ -28,11 +28,25 @@
     align-items: center;
     justify-content: center;
     
-    background-color: rgb(235, 235, 235); /* temporary */
+    background-color: rgb(235, 235, 235); 
+}
+
+.single-seat:hover
+{
+    cursor: pointer;
+    background-color: rgb(218, 218, 218);
 }
 
 .chosenSeat
 {
-    font-weight: 700;
-    background-color:lime;
+    background-color:rgb(80, 238, 80);
+
+    color: white;
+    font-weight: 700;   
+}
+
+.chosenSeat:hover
+{
+    cursor: pointer;
+    background-color: rgb(71, 207, 71);
 }
