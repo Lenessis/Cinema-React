@@ -53,6 +53,14 @@
       "time": "999",
       "description": "Zagrożony wyginięciem, najmniejszy przeżuwacz świata",
       "id": 6
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "img": "https://static.wikia.nocookie.net/harrypotter/images/a/a8/Harry_Potter_and_the_Prisoner_of_Azkaban_2.jpg",
+      "productionYear": "2004",
+      "time": "142",
+      "description": "During a summer with the Dursleys, Harry Potter loses his temper and inadvertently causes Aunt Marge to inflate like a balloon and float away. Fed up, Harry flees the Dursleys with his belongings. The Knight Bus arrives and takes Harry to the Leaky Cauldron, where he is pardoned by Minister for Magic Cornelius Fudge for using magic outside of Hogwarts. After reuniting with his best friends Ron Weasley and Hermione Granger, Harry learns that Sirius Black, a convicted supporter of the dark wizard Lord Voldemort, has escaped Azkaban prison and intends to kill him.",
+      "id": 7
     }
   ],
   "halls": [
@@ -250,6 +258,17 @@
         "C10"
       ],
       "id": 6
+    },
+    {
+      "idShowing": 2,
+      "firstname": "Jerzy",
+      "lastname": "Kowalski",
+      "email": "j.kowalski@gmail.com",
+      "price": "16",
+      "seats": [
+        "A6"
+      ],
+      "id": 7
     }
   ]
 }
