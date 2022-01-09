@@ -16,6 +16,7 @@ import App from './components/App.js';
  *    4. Then open in browser: localhost:3000/
  * 
  *  * Installing packages:
+ *      npm install -g json-server
  *      npm install axios
  *      npm install react-router-dom --save
  *      npm install react-redus 
