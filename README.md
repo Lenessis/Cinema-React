@@ -1,3 +1,18 @@
+# Running the project Cinema and installing required libraries
+
+ *  * Running app:
+ *    1. Install all libraries needed to run the project (they are wrote below).
+ *    2. FIRST TERMINAL:   npm start                                            (starting rect project)
+ *    3. SECOND TERMINAL:  json-server --port 3005 --watch .\src\data\db.json   (starting database)
+ *    4. Then open in browser: localhost:3000/
+ * 
+ *  * Installing packages:
+ *      npm install axios
+ *      npm install react-router-dom --save
+ *      npm install react-redus 
+ *      npm install @types/react-redux 
+ *      npm install redux-thunk
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

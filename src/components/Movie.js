@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
 import '../stylesheets/Movie.css';
 
 /* 
@@ -11,8 +12,6 @@ import '../stylesheets/Movie.css';
 const Movie = props =>
 {
     
-
-
     function ShowMovieDetails()
     {
         var x = document.getElementById(props.id)
@@ -44,6 +43,7 @@ const Movie = props =>
             <div className="movie-details" id={props.id}>
 
                 <div className="movie-details-card">
+
             {/* --- Image block --- */}
                     <img src={props.img} className="image-details" alt="{props.title}" />
 
@@ -68,11 +68,9 @@ const Movie = props =>
                             <Link to={"/edit-movie/"+props.id}>
                                 <button className="btn btn-primary buttons-child">Edit</button>
                             </Link>
-
-                            
+                           
                             <button className="btn btn-primary buttons-child" onClick={e => {e.preventDefault(); props.deleteMovie(props.id)}}>Delete</button>
-                            
-                            
+                                                        
                             <Link to={`/showings/${props.id}`}>
                                 <button className="btn btn-primary buttons-child">Book the ticket</button>
                             </Link>                           
@@ -87,14 +85,6 @@ const Movie = props =>
 
 Movie.protoTypes =
 {
-    /*id(props, propName)
-    {
-        if(!props[propName])
-        {
-            return new Error(propName + "doesn't exist")
-        }
-    },*/
-
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string,

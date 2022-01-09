@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 import { addTicket } from "../api/TicketsApi";
 
+/*
+ * Ticket component shows buying ticket form.
+ * It has validation on all input boxes.
+ * It checks and send information to showing component to add data to database.
+*/
 
 const Ticket = (props) =>
 {
     var listOfSeats;
-
-    
-    
+  
     function BuyTicket(e)
     {
         e.preventDefault();
@@ -20,26 +23,20 @@ const Ticket = (props) =>
             document.getElementById(props.idS+"email-alert").innerHTML === ""
         )
         {
-
             const firstname = document.getElementById(props.idS+"firstname").value;
             const lastname = document.getElementById(props.idS+"lastname").value;
             const email = document.getElementById(props.idS+"email").value;
             const price = document.getElementById(props.idS+"discount").value;
-
-            console.log("f, l, e, p ", firstname, lastname, email, price)
-
-            console.log("leng", listOfSeats.length)
-
             
-
             if(firstname && lastname && email && listOfSeats.length !== 0)
             {
                 addTicket(props.idS,firstname,lastname,email,price, listOfSeats);
                 document.getElementById(props.idS+"success-alert").innerHTML = "Ticket bought successfully!"
-            }
-            
+            }           
         }
     }
+
+    /* --- VALIDATION --- */
 
     function CheckDate(date)
     {
@@ -71,7 +68,6 @@ const Ticket = (props) =>
         let today = new Date();
 
         let todayHour = parseInt(today.getHours())
-        //let todayMinutes = parseInt(today.getMinutes())
         let todayDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
         let selectedHour = parseInt(time.slice(0,2))
@@ -137,7 +133,6 @@ const Ticket = (props) =>
     return(
         <div className="form-content"> 
             <h1>Ticket</h1>
-            {/* Zrobić, żeby wyświetlało tu się miejsce i nazwa filmu!!! */}
             <p>Buy a ticket for <b>{props.title}</b> </p>
             
             <form>
@@ -188,9 +183,7 @@ const Ticket = (props) =>
 
                 <button type="submit" className="btn btn-primary" onClick={e=>BuyTicket(e)}>Buy</button>
                 <div className="alert success" id={props.idS+"success-alert"}></div>
-            </form>
-               
-            
+            </form>                           
         </div>
     );
 }

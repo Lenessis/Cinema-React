@@ -1,3 +1,7 @@
+/* 
+* Getting all information about showings from database
+*/
+
 const axios = require('axios');
 
 export const getAllShowings = async () => {

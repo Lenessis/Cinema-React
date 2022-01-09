@@ -1,3 +1,6 @@
+/* 
+* Getting all information about halls from database
+*/
 const axios = require('axios');
 
 export const getAllHalls = async () => {

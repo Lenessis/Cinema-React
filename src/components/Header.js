@@ -1,6 +1,9 @@
-import react from "react";
 import { Link } from "react-router-dom";
 import '../stylesheets/Header.css';
+
+/*
+ * Component which render navigation bar at the top of the page
+*/
 
 function Header ()
 {
@@ -11,7 +14,7 @@ function Header ()
                     CinemaApp
                 </Link>
 
-                <div> {/*className="collapse navbar-collapse" id="navbarNav"*/}
+                <div>
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <Link to="/" className="nav-link">
@@ -26,15 +29,7 @@ function Header ()
                         </li>
                         
                     </ul>
-                </div>
-
-               {/*} <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                    </button> */}
-
-                {/* Jeśli wyświetla się komponent Movie, to wyświetl przycisk add movie */}
-                
-                
+                </div>                                
             </nav>
         </header>
     );

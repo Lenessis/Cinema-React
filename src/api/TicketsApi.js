@@ -1,3 +1,6 @@
+/* 
+* Getting all information about tickets from database. You could add ticket to database.
+*/
 const axios = require('axios');
 
 export const getAllTickets = async () => {

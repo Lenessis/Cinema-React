@@ -1,23 +1,23 @@
 import React from "react";
-import { Component } from "react/cjs/react.production.min";
 import '../stylesheets/Hall.css';
 
 /*
- * This component shows seating in single cinema hall 
+ * This component shows seating (avaible and reserved) in single cinema hall 
  */
 
-// Renderowanie miejsc po wierszu i ilości miejsc w wierszu
-//jedno miejsce ma id, należy do jakiejś sali i ma status Zarezerwowane lub nie
 const Hall = props =>
 {
+    // customer list of seats
     var reservedSeats = new Array(0);
 
+    // changing numbers to letters method
     function NextChar(x)
     {
         return String.fromCharCode(x.charCodeAt(0) + 1);
         /* Solution: https://stackoverflow.com/questions/12504042/what-is-a-method-that-can-be-used-to-increment-letters */
     }
 
+    /* Reserve your seat method  */
     function ReserveSeat(id)
     {  
         var element = document.getElementById(id);
@@ -50,6 +50,8 @@ const Hall = props =>
         {
             let idSeat = props.idS+rowName+i
             let content = rowName+i
+
+            // rendering reserved seats on specific showing
             if(props.reservedList.includes(content))
             {
                 seats.push(
@@ -58,6 +60,8 @@ const Hall = props =>
                 </div>
                 );
             }
+
+            // rendering avaible seatings on specific showing
             else
             {
                 seats.push(
@@ -66,17 +70,13 @@ const Hall = props =>
                     </div>
                 );
             }
-            }
-            
+        }            
 
         return seats;
     }
 
     function RenderRows(amountOfRows, amountOfSeats)
     {
-        /* przekazywanie do renderRows tablicy z iloscia miejsc 
-        w danym rzedzie,
-         a liczba rzedow to dlugosc tablicy */
         const rows = [];
 
         for(let i = 'A', j = 1; j <= amountOfRows; j++)
@@ -86,6 +86,7 @@ const Hall = props =>
             );
             i = NextChar(i);
         }
+
         return rows;
     }
 
@@ -97,12 +98,9 @@ const Hall = props =>
                     {RenderRows(props.rowsAmount, props.seatsAmount)}
                     
                 </div>
-                <div className="alert" id={props.idS+"seats-alert"}></div>
-                
+                <div className="alert" id={props.idS+"seats-alert"}></div>               
             </div>
         );
-    
-
 }
 
 export default Hall;

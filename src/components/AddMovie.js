@@ -2,10 +2,16 @@ import React from "react";
 import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 
+/*
+* Component shows form in which you can write necessery information and add film.
+* It includes validation on almost every box.
+* By pressing 'Add' button you will add data to database, if they will be correct and pass through the validation of course.
+*/
+
 const AddMovie = ({addMovieHandler}) =>
 {
     /* --- Adding Function ---*/
-function handleSaveMovie  (e) 
+    function handleSaveMovie  (e) 
     {
         e.preventDefault();
         if(
@@ -29,13 +35,11 @@ function handleSaveMovie  (e)
             if(!img)
             {
              img = "https://icon-library.com/images/none-icon/none-icon-0.jpg"
-            // addMovieHandler(title,year,duration,description); 
             }
 
             if(!description)
                {
                 description = "No description"
-               // addMovieHandler(title,img,year,duration);
                }
 
            if(title && duration)
@@ -139,26 +143,8 @@ function handleSaveMovie  (e)
     );
 }
 
-/*AddMovie.PropTypes = {
-
-    title: PropTypes.string.isRequired,
-    img: PropTypes.string,
-    productionYear: PropTypes.number,
-    time: PropTypes.number.isRequired,
-    description: PropTypes.string,
-    addMovieHandler: PropTypes.func.isRequired
-}*/
-
 AddMovie.protoTypes =
 {
-    /*id(props, propName)
-    {
-        if(!props[propName])
-        {
-            return new Error(propName + "doesn't exist")
-        }
-    },*/
-
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string,

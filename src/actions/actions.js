@@ -3,6 +3,12 @@ import { getAllShowings,getMovieShowing } from "../api/ShowingsApi";
 import { getAllHalls } from "../api/HallsApi";
 import { getAllTickets, addTicket } from "../api/TicketsApi";
 
+/*
+* This file include all methods connected with database operations.
+* It communicate with specific, imported Api and sending data.
+* Methods with type and variable are comunicating with reducers files.
+*/
+
 // --- MOVIES
 export const fetchMoviesFromApi = () => (dispatch) => {
     return getAllMovies().then(data => {
@@ -71,6 +77,7 @@ export const movieFetched = (movie) => ({
 
 
   // --- SHOWINGS
+
   export const fetchShowingsFromApi = () => (dispatch) => {
     return getAllShowings().then(data => {
       dispatch(showingsFetched(data));

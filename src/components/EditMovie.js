@@ -1,17 +1,18 @@
 import React from "react";
 import {  useSelector } from "react-redux";
 
-
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import '../stylesheets/form.css'
 import {  useParams } from "react-router-dom";
 
 function EditMovie ({editMovieHandler})
 {
-    //fetching film value
+    /*--- Fetching film value --- */
     const id = useParams().id; 
     console.log(useParams())    
     const movie = useSelector(state=> state.movies[id])
+
+    /* --- Edit method --- */
     function handleSaveMovie  (e) 
     {
         e.preventDefault();
@@ -26,6 +27,7 @@ function EditMovie ({editMovieHandler})
             const duration = document.getElementById("duration").value;
             let description = document.getElementById("description").value;
 
+            // img and description values is not necessery in database.
             if(!img && !description)
             {
 
@@ -52,10 +54,7 @@ function EditMovie ({editMovieHandler})
         }
     }
 
-
-
-
-  
+    /* --- VALIDATION --- */
 
     function CheckTitle(title)
     {
@@ -146,4 +145,15 @@ function EditMovie ({editMovieHandler})
         </div>
     );
 }
+EditMovie.protoTypes =
+{
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    productionYear: PropTypes.number,
+    time: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    editMovieHandler: PropTypes.func.isRequired
+}
+
 export default EditMovie;

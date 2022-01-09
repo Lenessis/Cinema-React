@@ -9,7 +9,11 @@
  *  - fetch(), .then, .catch (Polish tutorial): https://www.youtube.com/watch?v=re9VtLMkO6s
  *  - fetch() and how to install json database: https://www.youtube.com/watch?v=mAqYJF-yxO8&list=PL4cUxeGkcC9i2v2ZqJgydXIcRq_ZizIdD
  */
-//import axios from 'axios';
+
+
+/* 
+* Getting all information about movies from database, adding, updating and deleting them
+*/
 
  const axios = require('axios');
 
